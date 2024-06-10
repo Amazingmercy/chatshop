@@ -126,7 +126,7 @@ const handleIncomingMessage = async(req, res) => {
 const verifyWebhook = async (req, res) => {
   const VERIFY_TOKEN = process.env.VERIFY_TOKEN
 
-  console.log('Query object:', req);
+  console.log('Query object:', req.query);
 
   const mode = req.query['hub.mode'];
   const token = req.query['hub.verify_token'];
