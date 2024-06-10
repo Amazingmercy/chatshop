@@ -28,10 +28,12 @@ app.use('/whatsapp',WhatsappMessages)
 
 
 
-const port = 4501
+const port = process.env.PORT || 4501;
 const start = async() => {
     try{
-        connectDB.connect()
+        await connectDB.sync();
+        await sequelize.authenticate();
+        console.log('Database connected.');
         app.listen(port, console.log(`App is listening on port ${port}`));
     } catch(error){
         console.error()

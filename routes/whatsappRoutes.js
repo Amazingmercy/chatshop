@@ -5,9 +5,9 @@ const Whatsapp = require('../controller/whatsappController')
 
 
 
-router.route('/').post(Whatsapp.handleIncomingMessage)
+router.route('/message').post(Whatsapp.handleIncomingMessage)
 router.route('/webhook').get(Whatsapp.verifyWebhook)
-
+router.route('/').post(Whatsapp.sendMessage)
 
 
 

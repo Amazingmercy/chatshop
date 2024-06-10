@@ -1,86 +1,97 @@
 require('dotenv').config();
-const { MessagingResponse } = require('twilio').twiml;
-const connectDB = require('../DB/config')
-const query = (connectDB.query).bind(connectDB);
+const { Op } = require('sequelize');
 const { NlpManager } = require('node-nlp');
 const manager = new NlpManager({ languages: ['en'] });
+const Product = require('../models/productModel');  
 
 
-const handleInquiry = async(res, twiml, productKeyword) => {
-    try {
-        const results = await query('SELECT * FROM products WHERE name LIKE ?', [`%${productKeyword}%`]);
-        if (results.length > 0) {
-          let responseMessage = `Which ${productKeyword} do you want? Here are some options:\n`;
-          results.forEach(product => {
-            responseMessage += `\n${product.name} - ${product.price}\n${product.picture_url}\n`;
-          });
-          twiml.message(responseMessage);
-        } else {
-          twiml.message(`No ${productKeyword} found.`);
-        }
-    } catch (error) {
-        console.error('Error querying database:', error);
-        twiml.message('There was an error processing your request. Please try again later.');
-    } finally {
-        res.writeHead(200, { 'Content-Type': 'text/xml' });
-        res.end(twiml.toString());
+
+const handleInquiry = async (res, productKeyword, recipient) => {
+  try {
+    const results = await Product.findAll({
+      where: {
+        name: {
+          [Op.like]: `%${productKeyword}%`,
+        },
+      },
+    });
+
+    if (results.length > 0) {
+      let responseMessage = `Which ${productKeyword} do you want? Here are some options:\n`;
+      results.forEach(product => {
+        responseMessage += `\n${product.name} - ${product.price}\n${product.picture_url}\n`;
+      });
+      await sendMessage(recipient, responseMessage);
+    } else {
+      await sendMessage(recipient, `No ${productKeyword} found.`);
     }
+  } catch (error) {
+    console.error('Error querying database:', error);
+    await sendMessage(recipient, 'There was an error processing your request. Please try again later.');
+  }
+};
 
-}
 
 
-const handleSelectItem = async(res, twiml, incomingMessage, response) => {
-    try {
-        const itemEntity = response.entities.find(entity => entity.entity === 'item');
-        const productName = itemEntity ? itemEntity.option : incomingMessage.split(' ').slice(2).join(' ');
-    
-        const productResults = await query('SELECT * FROM products WHERE name = ?', [productName]);
-        if (productResults.length > 0) {
-          const product = productResults[0];
-          const vendorResults = await query('SELECT * FROM users WHERE id = ?', [product.userId]);
-          if (vendorResults.length > 0) {
-            const user = vendorResults[0];
-            twiml.message(`Ok great, chat the vendor up: ${user.WhatsAppBussinessLink}`);
-          } else {
-            twiml.message('Vendor not found.');
-          }
-        } else {
-          twiml.message('Product not found.');
-        }
-    } catch (error) {
-        console.error('Error querying database:', error);
-        twiml.message('There was an error processing your request. Please try again later.');
-    } finally {
-        res.writeHead(200, { 'Content-Type': 'text/xml' });
-        res.end(twiml.toString())
+const extractProductName = (incomingMessage) => {
+  const words = incomingMessage.split(' '); // Split the message into words
+  const productName = words[words.length - 1].trim(); // Product name is the last word, trimmed
+  return productName;
+};
+
+
+
+const handleSelectItem = async (res, incomingMessage, response, recipient) => {
+  try {
+    const itemEntity = response.entities.find(entity => entity.entity === 'item');
+    const productName = itemEntity ? itemEntity.option : extractProductName(incomingMessage);
+
+    // Find product that has a character similarity with what user wants
+    const product = await Product.findOne({
+      where: {
+        name: {
+          [Op.like]: `%${productName}%`,
+        },
+      },
+    });
+
+    if (product) {
+      await sendMessage(recipient, `Ok great, chat the vendor up: ${product.userId}`);
+    } else {
+      await sendMessage(recipient, 'Product not found.');
     }
-}
+  } catch (error) {
+    console.error('Error querying database:', error)
+    await sendMessage(recipient, 'There was an error processing your request. Please try again later.');
+  } finally {
+    res.writeHead(200, { 'Content-Type': 'text/xml' });
+  }
+};
 
 
-const handleGreeting = async(res, twiml) => {
+const handleGreeting = async(res, recipient) => {
     try {
         const greetingMessage = 'Hello! How can I assist you today?';
-        twiml.message(greetingMessage);
+        await sendMessage(recipient, greetingMessage);
     } catch (error) {
         console.error('Error handling greeting:', error);
-        twiml.message('There was an error processing your request. Please try again later.');
+        await sendMessage(recipient, 'There was an error processing your request. Please try again later.');
     } finally {
         res.writeHead(200, { 'Content-Type': 'text/xml' });
-        res.end(twiml.toString());
     }
 
 }
 
 
 
-const sendMessage = async(to, body) => {
+const sendMessage = async(recipient, message) => {
   try {
     await axios.post(
       `${process.env.WHATSAPP_API_URL}/messages`,
       {
         messaging_product: 'whatsapp',
-        to,
-        text: { body },
+        to: recipient,
+        text: { body: message },
       },
       {
         headers: {
@@ -108,8 +119,7 @@ const handleIncomingMessage = async(req, res) => {
   if (response.intent === 'greeting') {
     await handleGreeting(res, from);
   } else if (response.intent === 'inquire_price') {
-    const itemEntity = response.entities.find(entity => entity.entity === 'item');
-    const productKeyword = itemEntity ? itemEntity.option : 'product';
+    const productKeyword = 'product';
     await handleInquiry(res, from, productKeyword);
   } else if (response.intent === 'select_item') {
     await handleSelectItem(res, from, incomingMessage, response);
@@ -118,12 +128,6 @@ const handleIncomingMessage = async(req, res) => {
     res.sendStatus(200);
   }
 }
-
-
-
-
-
-
 
 
 
