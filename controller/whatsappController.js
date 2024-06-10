@@ -6,14 +6,10 @@ const Product = require('../models/productModel');
 
 
 
-const handleInquiry = async (res, productKeyword, recipient) => {
+const handleInquiry = async (res, productKeyword) => {
   try {
-    const results = await Product.findAll({
-      where: {
-        name: {
-          [Op.like]: `%${productKeyword}%`,
-        },
-      },
+    const results = await Product.find({
+      name: new RegExp(productKeyword, 'i'),
     });
 
     if (results.length > 0) {
@@ -21,13 +17,13 @@ const handleInquiry = async (res, productKeyword, recipient) => {
       results.forEach(product => {
         responseMessage += `\n${product.name} - ${product.price}\n${product.picture_url}\n`;
       });
-      await sendMessage(recipient, responseMessage);
+      await sendMessage(res, responseMessage);
     } else {
-      await sendMessage(recipient, `No ${productKeyword} found.`);
+      await sendMessage(res, `No ${productKeyword} found.`);
     }
   } catch (error) {
     console.error('Error querying database:', error);
-    await sendMessage(recipient, 'There was an error processing your request. Please try again later.');
+    await sendMessage(res, 'There was an error processing your request. Please try again later.');
   }
 };
 
@@ -46,13 +42,8 @@ const handleSelectItem = async (res, incomingMessage, response, recipient) => {
     const itemEntity = response.entities.find(entity => entity.entity === 'item');
     const productName = itemEntity ? itemEntity.option : extractProductName(incomingMessage);
 
-    // Find product that has a character similarity with what user wants
     const product = await Product.findOne({
-      where: {
-        name: {
-          [Op.like]: `%${productName}%`,
-        },
-      },
+      name: new RegExp(productName, 'i'),
     });
 
     if (product) {

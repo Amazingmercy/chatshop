@@ -1,40 +1,45 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../DB/config');
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-const User = sequelize.define('User', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
-  },
+// Define the User schema
+const userSchema = new Schema({
   name: {
-    type: DataTypes.STRING(50),
-    allowNull: true,
+    type: String,
+    maxlength: 50,
+    trim: true,
   },
   email: {
-    type: DataTypes.STRING(50),
-    allowNull: true,
+    type: String,
+    maxlength: 50,
+    trim: true,
   },
   businessName: {
-    type: DataTypes.STRING(50),
-    allowNull: true,
+    type: String,
+    maxlength: 50,
+    trim: true,
   },
   phoneNo: {
-    type: DataTypes.STRING(255),
-    allowNull: true,
+    type: String,
+    maxlength: 255,
+    trim: true,
   },
   WhatsAppBussinessLink: {
-    type: DataTypes.STRING(255),
-    allowNull: true,
+    type: String,
+    maxlength: 255,
+    trim: true,
   },
   password: {
-    type: DataTypes.STRING(255),
-    allowNull: true,
+    type: String,
+    maxlength: 255,
+    trim: true,
   },
   joinDate: {
-    type: DataTypes.DATE,
-    allowNull: true,
+    type: Date,
+    default: Date.now,
   },
 });
+
+// Create the User model
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;
