@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express')
 const { NlpManager } = require('node-nlp');
-const connectDB = require('./DB/config')
+const sequelize = require('./DB/config')
 const WhatsappMessages = require('./routes/whatsappRoutes')
 
 const app = express();
@@ -31,7 +31,7 @@ app.use('/whatsapp',WhatsappMessages)
 const port = process.env.PORT || 4501;
 const start = async() => {
     try{
-        await connectDB.sync();
+        await sequelize.sync();
         await sequelize.authenticate();
         console.log('Database connected.');
         app.listen(port, console.log(`App is listening on port ${port}`));
