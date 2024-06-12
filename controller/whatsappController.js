@@ -77,6 +77,7 @@ const handleGreeting = async(res, recipient) => {
 
 
 const sendMessage = async(recipient, message) => {
+  console.log(recipient, message)
   try {
     await axios.post(
       `${process.env.WHATSAPP_API_URL}/messages`,
@@ -98,6 +99,16 @@ const sendMessage = async(recipient, message) => {
     );
   } catch (error) {
     console.error('Error sending message:', error);
+  }
+}
+
+const testSendMessage = async (req, res) => {
+  const { recipient, message } = req.body;
+  try {
+    await sendMessage(recipient, message);
+    res.status(200).send('Message sent successfully');
+  } catch (error) {
+    res.status(500).send('Failed to send message');
   }
 }
 
@@ -164,5 +175,6 @@ module.exports = {
     handleSelectItem,
     handleIncomingMessage,
     sendMessage,
-    verifyWebhook
+    verifyWebhook,
+    testSendMessage
 }
