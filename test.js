@@ -1,32 +1,29 @@
-const axios = require('axios')
-require('dotenv').config();
+const {sendMessage, handleIncomingMessage} = require('./controller/whatsappController')
 
 
-const sendMessage = async(recipient, message) => {
-    try {
-      await axios.post(
-        `${process.env.WHATSAPP_API_URL}/messages`,
-        {
-          messaging_product: 'whatsapp',
-          to: recipient,
-          text: { body: message },
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${process.env.WHATSAPP_API_TOKEN}`,
-          },
-        }
-      );
-    } catch (error) {
-      console.log('Error sending message:', error);
-    }
+const testSendMessage = async (req, res) => {
+  const { recipient, message } = req.body;
+  try {
+    await sendMessage(recipient, message);
+    res.status(200).send('Message sent successfully');
+  } catch (error) {
+    res.status(500).send('Failed to send message');
   }
-  
-  
+}
 
 
-const recipient = '09081513958'; // Replace with the actual recipient's WhatsApp number
-const message = 'Test message from sendMessage function';
+const testIncomingMessages = async (req, res) => {
+  const { incomingMessage, recipient } = req.body;
+  try {
+    await handleIncomingMessage(recipient, incomingMessage);
+    res.status(200).send('message handled');
+  } catch (error) {
+    res.status(500).send('Failed to send message');
+  }
+}
 
-sendMessage(recipient, message);
+
+module.exports = {
+  testSendMessage,
+  testIncomingMessages
+}

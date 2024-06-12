@@ -1,9 +1,7 @@
 require('dotenv').config();
-const { Op } = require('sequelize');
-const { NlpManager } = require('node-nlp');
-const manager = new NlpManager({ languages: ['en'] });
 const Product = require('../models/productModel');  
 const axios = require('axios')
+const setupNlp = require('../nlp')
 
 
 
@@ -68,8 +66,6 @@ const handleGreeting = async(res, recipient) => {
     } catch (error) {
         console.error('Error handling greeting:', error);
         await sendMessage(recipient, 'There was an error processing your request. Please try again later.');
-    } finally {
-        res.writeHead(200, { 'Content-Type': 'text/xml' });
     }
 
 }
@@ -102,27 +98,22 @@ const sendMessage = async(recipient, message) => {
   }
 }
 
-const testSendMessage = async (req, res) => {
-  const { recipient, message } = req.body;
-  try {
-    await sendMessage(recipient, message);
-    res.status(200).send('Message sent successfully');
-  } catch (error) {
-    res.status(500).send('Failed to send message');
-  }
-}
-
 
 
 
 const handleIncomingMessage = async (req, res) => {
   try {
-    const incomingMessage = req.body.entry[0].changes[0].value.messages[0].text.body;
-    const from = req.body.entry[0].changes[0].value.messages[0].from;
+    // const incomingMessage = req.body.entry[0].changes[0].value.messages[0].text.body;
+    // const from = req.body.entry[0].changes[0].value.messages[0].from;
+    const incomingMessage = req.body.message.toLowerCase()
+    const from = req.body.recipient
+    const manager = await setupNlp();
 
     console.log(`Received message from ${from}: ${incomingMessage}`);
 
     const response = await manager.process('en', incomingMessage);
+    console.log(response);
+
 
     if (response.intent === 'greeting') {
       await handleGreeting(res, from);
@@ -175,6 +166,5 @@ module.exports = {
     handleSelectItem,
     handleIncomingMessage,
     sendMessage,
-    verifyWebhook,
-    testSendMessage
+    verifyWebhook
 }

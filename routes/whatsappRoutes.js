@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const {testSendMessage, handleIncomingMessage, verifyWebhook} = require('../controller/whatsappController')
+const {handleIncomingMessage, verifyWebhook} = require('../controller/whatsappController')
+const {testSendMessage, testIncomingMessages} = require('../test')
 
 
 
@@ -10,7 +11,7 @@ const {testSendMessage, handleIncomingMessage, verifyWebhook} = require('../cont
 
 router.route('/webhook').post(handleIncomingMessage)
 router.route('/webhook').get(verifyWebhook)
-router.route('/test').post(testSendMessage)
+router.route('/test').post(handleIncomingMessage)
 
 
 
