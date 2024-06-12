@@ -105,7 +105,7 @@ const handleIncomingMessage = async (req, res) => {
   try {
     const incomingMessageMain = req.body.entry[0].changes[0].value.messages[0].text.body;
     const from = req.body.entry[0].changes[0].value.messages[0].from;
-    const incomingMessage = incomingMessageMain.toLowerCase()
+    const incomingMessage = (incomingMessageMain).toLowerCase()
 
     // const incomingMessage = req.body.message.toLowerCase()
     // const from = req.body.recipient
