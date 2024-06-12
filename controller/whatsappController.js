@@ -3,6 +3,7 @@ const { Op } = require('sequelize');
 const { NlpManager } = require('node-nlp');
 const manager = new NlpManager({ languages: ['en'] });
 const Product = require('../models/productModel');  
+const axios = require('axios')
 
 
 
@@ -99,26 +100,33 @@ const sendMessage = async(recipient, message) => {
 
 
 
-const handleIncomingMessage = async(req, res) => {
-  const incomingMessage = req.body.messages[0].text.body;
-  const from = req.body.messages[0].from;
+const handleIncomingMessage = async (req, res) => {
+  try {
+    const incomingMessage = req.body.entry[0].changes[0].value.messages[0].text.body;
+    const from = req.body.entry[0].changes[0].value.messages[0].from;
 
-  console.log(`Received message from ${from}: ${incomingMessage}`);
+    console.log(`Received message from ${from}: ${incomingMessage}`);
 
-  const response = await manager.process('en', incomingMessage);
+    const response = await manager.process('en', incomingMessage);
 
-  if (response.intent === 'greeting') {
-    await handleGreeting(res, from);
-  } else if (response.intent === 'inquire_price') {
-    const productKeyword = 'product';
-    await handleInquiry(res, from, productKeyword);
-  } else if (response.intent === 'select_item') {
-    await handleSelectItem(res, from, incomingMessage, response);
-  } else {
-    await sendMessage(from, 'Sorry, I did not understand that.');
+    if (response.intent === 'greeting') {
+      await handleGreeting(res, from);
+    } else if (response.intent === 'inquire_price') {
+      const productKeyword = 'product';
+      await handleInquiry(res, from, productKeyword);
+    } else if (response.intent === 'select_item') {
+      await handleSelectItem(res, from, incomingMessage, response);
+    } else {
+      await sendMessage(from, 'Sorry, I did not understand that.');
+    }
     res.sendStatus(200);
+
+  } catch (error) {
+    console.error('Error handling incoming message:', error);
+    res.sendStatus(500);
   }
-}
+};
+
 
 
 
