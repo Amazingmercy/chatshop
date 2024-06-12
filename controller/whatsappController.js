@@ -103,10 +103,12 @@ const sendMessage = async(recipient, message) => {
 
 const handleIncomingMessage = async (req, res) => {
   try {
-    // const incomingMessage = req.body.entry[0].changes[0].value.messages[0].text.body;
-    // const from = req.body.entry[0].changes[0].value.messages[0].from;
-    const incomingMessage = req.body.message.toLowerCase()
-    const from = req.body.recipient
+    const incomingMessageMain = req.body.entry[0].changes[0].value.messages[0].text.body;
+    const from = req.body.entry[0].changes[0].value.messages[0].from;
+    const incomingMessage = incomingMessageMain.toLowerCase()
+
+    // const incomingMessage = req.body.message.toLowerCase()
+    // const from = req.body.recipient
     const manager = await setupNlp();
 
     console.log(`Received message from ${from}: ${incomingMessage}`);
