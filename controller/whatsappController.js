@@ -83,7 +83,11 @@ const sendMessage = async(recipient, message) => {
       {
         messaging_product: 'whatsapp',
         to: recipient,
-        text: { body: message },
+        type: "text",
+        text: { 
+          body: 
+            message 
+          },
       },
       {
         headers: {
