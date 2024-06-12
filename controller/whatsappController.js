@@ -77,10 +77,9 @@ const handleGreeting = async(res, recipient) => {
 
 
 const sendMessage = async(recipient, message) => {
-  console.log(recipient, message)
   try {
     await axios.post(
-      `${process.env.WHATSAPP_API_URL}/messages`,
+      `${process.env.WHATSAPP_API_URL}`,
       {
         messaging_product: 'whatsapp',
         to: recipient,
@@ -88,6 +87,7 @@ const sendMessage = async(recipient, message) => {
         text: { 
           body: 
             message 
+
           },
       },
       {
