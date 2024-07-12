@@ -1,10 +1,23 @@
 const { dockStart } = require('@nlpjs/basic');
+const connectDB = require('./DB/config')
+const DB_URI = process.env.MONGO_URI
+const Product = require('./models/productModel')
 
 const setupNlp = async () => {
   const dock = await dockStart({ use: ['Basic'] });
   const manager = dock.get('nlp');
 
   manager.addLanguage('en');
+
+  await connectDB(DB_URI)
+  //const products = await Product.find()
+
+  const items = ['bag', 'shoes', 'shirt'];
+
+  manager.addNerBetweenCondition('en', 'item', 'the', undefined);
+  items.forEach(item => {
+    manager.addNerRegexRule('en', 'item', new RegExp(item, 'gi'));
+  });
 
   // Greetings
   manager.addDocument('en', 'hello', 'greeting');
@@ -32,19 +45,18 @@ const setupNlp = async () => {
   manager.addDocument('en', 'I need the %item%', 'select_item');
   manager.addDocument('en', 'give me %item%', 'select_item');
   manager.addDocument('en', 'send %item%', 'select_item');
+  manager.addDocument('en', 'I want to buy %item%', 'select_item');
 
-  
   // Answers
   manager.addAnswer('en', 'greeting', 'Hello! How can I assist you today?');
   manager.addAnswer('en', 'inquire_price', 'Which item do you want?');
   manager.addAnswer('en', 'select_item', 'Ok great, chat the vendor up');
   manager.addAnswer('en', 'greeting', 'Hey there! What can I do for you?');
   manager.addAnswer('en', 'greeting', 'Good morning! How may I help you?')
-  
 
   //Answers for price inquiries
   manager.addAnswer('en', 'inquire_price', 'Sure, what product are you interested in?');
-  manager.addAnswer('en', 'inquire_price', 'Please specify the item you want to know the price for.');
+  manager.addAnswer('en', 'inquire_price', 'Please specify the item you want.');
 
   //Answers for item selection
   manager.addAnswer('en', 'select_item', 'Excellent choice! Contact the vendor for details.');

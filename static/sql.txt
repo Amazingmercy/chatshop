@@ -1,0 +1,20 @@
+CREATE DATABASE shopDB;
+USE shopDB;
+CREATE TABLE products(
+id INT AUTO_INCREMENT PRIMARY KEY,
+userId INT,
+name VARCHAR(50),
+price INT,
+image VARCHAR(255),
+FOREIGN KEY(userId) REFERENCES users(id)
+);
+CREATE TABLE users(
+id INT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(50),
+email VARCHAR(50),
+businessName VARCHAR(50),
+phoneNo VARCHAR(255),
+WhatsAppBussinessLink VARCHAR(255),
+password VARCHAR(255),
+joinDate DATETIME
+);

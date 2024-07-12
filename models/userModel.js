@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
+
 // Define the User schema
 const userSchema = new Schema({
   name: {
@@ -18,11 +19,6 @@ const userSchema = new Schema({
     maxlength: 50,
     trim: true,
   },
-  phoneNo: {
-    type: String,
-    maxlength: 255,
-    trim: true,
-  },
   WhatsAppBussinessLink: {
     type: String,
     maxlength: 255,
@@ -38,6 +34,8 @@ const userSchema = new Schema({
     default: Date.now,
   },
 });
+
+
 
 // Create the User model
 const User = mongoose.model('User', userSchema);

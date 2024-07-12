@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const {handleIncomingMessage, verifyWebhook} = require('../controller/whatsappController')
-const {testSendMessage, testIncomingMessages} = require('../test')
+
 
 
 

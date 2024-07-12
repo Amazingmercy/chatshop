@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css"> <!-- Assuming you have a 'public/css/style.css' file -->
+</head>
+<body>
+    <%- include('header') %> <!-- Assuming you have a 'header.ejs' file -->
+    <% if (error) { %>
+        <div class="error"><span><%= error %></span> <i class="fas fa-times" onclick="this.parentElement.style.display = 'none';"></i></div>
+    <% } %>
+
+    <% if (message) { %>
+        <div class="message"><span><%= error %></span> <i class="fas fa-times" onclick="this.parentElement.style.display = 'none';"></i></div>
+    <% } %>
+
+
+    <div class="container">
+        <section class="products">
+            <h1 class="heading">Latest Products</h1>
+            <div class="box-container">
+                <% products.forEach(product => { %>
+                    <div class="box">
+                        <img src="/uploaded_img/<%= product.image %>" alt="<%= product.name %>">
+                        <h3><%= product.name %></h3>
+                        <div class="price">$<%= product.price %>/-</div>
+                    </div>
+                <% }) %>
+            </div>
+        </section>
+    </div>
+
+    <script src="/js/script.js"></script> <!-- Assuming you have a 'public/js/script.js' file -->
+</body>
+</html>
