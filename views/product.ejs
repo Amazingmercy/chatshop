@@ -3,36 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+    <title>CHATSHOP-Products</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/style.css"> <!-- Assuming you have a 'public/css/style.css' file -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <%- include('header') %> <!-- Assuming you have a 'header.ejs' file -->
+    <%- include('header') %>
     <% if (error) { %>
         <div class="error"><span><%= error %></span> <i class="fas fa-times" onclick="this.parentElement.style.display = 'none';"></i></div>
     <% } %>
 
     <% if (message) { %>
-        <div class="message"><span><%= error %></span> <i class="fas fa-times" onclick="this.parentElement.style.display = 'none';"></i></div>
+        <div class="message"><span><%= message %></span> <i class="fas fa-times" onclick="this.parentElement.style.display = 'none';"></i></div>
     <% } %>
 
-
-    <div class="container">
-        <section class="products">
-            <h1 class="heading">Latest Products</h1>
-            <div class="box-container">
-                <% products.forEach(product => { %>
-                    <div class="box">
-                        <img src="/uploaded_img/<%= product.image %>" alt="<%= product.name %>">
-                        <h3><%= product.name %></h3>
-                        <div class="price">$<%= product.price %>/-</div>
-                    </div>
-                <% }) %>
-            </div>
+    <div class="product-container">
+        <section class="display-product-table">
+            <table>
+                <thead>
+                    <th>Product Image</th>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                    <% if (products.length > 0) { %>
+                        <% products.forEach(function(product) { %>
+                            <tr>
+                                <td><img src="/uploaded_img/<%= product.picture_url %>" height="50" alt="<%= product.name %> image"></td>
+                                <td><%= product.name %></td>
+                                <td>&#8358;<%= product.price %>/-</td>
+                                <td>
+                                    <a href="#" class="delete-btn" onclick="showDeleteForm('<%= product._id %>')"> <i class="fas fa-trash"></i> delete </a>
+                                    <a href="#" class="option-btn" onclick="showEditForm('<%= product._id %>', '<%= product.name %>', '<%= product.price %>', '<%= product.picture_url %>')"> <i class="fas fa-edit"></i> update </a>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    <% } else { %>
+                        <tr>
+                            <td colspan="4"><div class='empty'>No product added</div></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
         </section>
+
+        <% products.forEach(function(product) { %>
+            <section class="edit-form-container" id="edit-form-container-<%= product._id %>">
+                <form action='/updateProduct/<%= product._id %>' method="post" enctype="multipart/form-data">
+                    <img src="/uploaded_img/<%= product.picture_url %>" height="50" alt="<%= product.name %> image" id="edit-preview-image-<%= product._id %>">
+                    <input type="hidden" name="userId" value="<%= user._id %>" id="update_p_id-<%= product._id %>">
+                    <input type="text" class="box" required name="pName" id="update_p_name-<%= product._id %>" value="<%= product.name %>">
+                    <input type="number" min="0" class="box" required name="pPrice" id="update_p_price-<%= product._id %>" value="<%= product.price %>">
+                    <input type="file" class="box" name="pImage" accept="image/png, image/jpg, image/jpeg">
+                    <input type="submit" value="Update the product" class="btn">
+                    <input type="button" value="Cancel" class="option-btn" onclick="hideEditForm('<%= product._id %>');">
+                </form>
+            </section>
+
+            <section class="delete-form-container" id="delete-form-container-<%= product._id %>">
+                <form action="/deleteProduct/<%= product._id %>" method="post">
+                    <input type="submit" value="Delete the product" class="btn">
+                    <input type="button" value="Cancel" class="option-btn" onclick="hideDeleteForm('<%= product._id %>');">
+                </form>
+            </section>
+        <% }); %>
     </div>
 
-    <script src="/js/script.js"></script> <!-- Assuming you have a 'public/js/script.js' file -->
+    <%- include('footer') %>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

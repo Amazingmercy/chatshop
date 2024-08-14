@@ -4,24 +4,29 @@ const User = require('../models/userModel')
 const axios = require('axios')
 const setupNlp = require('../nlp')
 
+const extractProductName = (incomingMessage) => {
+  const words = incomingMessage.split(' '); // Split the message into words
+  const productName = words[words.length - 1].trim(); // Product name is the last word, trimmed
+  return productName;
+};
 
-
-const handleInquiry = async (res, response, recipient, productKeyword) => {
+const handleInquiry = async (res, response, recipient, incomingMessage) => {
   try {
-    const results = await Product.find({
-      name: new RegExp(productKeyword, 'i'),
+    const itemEntity = response.entities.find(entity => entity.entity === 'item');
+    const productName = itemEntity ? itemEntity.option : extractProductName(incomingMessage);
+
+    const allProducts = await Product.find({
+      name: new RegExp(productName, 'i'),
     });
 
-    if (results.length > 0) {
+    if (allProducts && allProducts.length > 0) {
       let responseMessage = response.answer;
-      results.forEach(product => {
+      allProducts.forEach(product => {
         responseMessage += `\n${product.name} - ${product.price}\n${product.picture_url}\n`;
       });
       await sendMessage(res, recipient, responseMessage);
-      res.status(200)
     } else {
-      await sendMessage(res, recipient, `${productKeyword} is not available.`);
-      res.status(200)
+      await sendMessage(res, recipient, `${productName} is not available.`);
     }
   } catch (error) {
     console.log('Error querying database:', error);
@@ -29,33 +34,28 @@ const handleInquiry = async (res, response, recipient, productKeyword) => {
   }
 };
 
-const extractProductName = (incomingMessage) => {
-  const words = incomingMessage.split(' '); // Split the message into words
-  const productName = words[words.length - 1].trim(); // Product name is the last word, trimmed
-  return productName;
-};
 
 const handleSelectItem = async (res, recipient, incomingMessage, response) => {
   try {
-    const itemEntity = response.entities
-    console.log(itemEntity)
+    const itemEntity = response.entities.find(entity => entity.entity === 'item');
     const productName = itemEntity ? itemEntity.option : extractProductName(incomingMessage);
 
-    const results = await Product.findOne({
+
+    // Find all products matching the name (using RegExp for case-insensitive search)
+    const allProducts = await Product.find({
       name: new RegExp(productName, 'i'),
     });
-  
-    if (results) {
+
+
+    if (allProducts && allProducts.length > 0) {
       let responseMessage = response.answer;
-      for (const product of results) {
-          const user = await User.findById(product.userId);
-          responseMessage += `\n${user.WhatsAppBussinessLink}\n`;
+      for (const product of allProducts) {
+        const user = await User.findById(product.userId);
+        responseMessage += `\n${user.whatsAppBussinessLink}\n`;
       }
-      await sendMessage(res,recipient, responseMessage);
-      res.status(200).json({message: 'Product  found'})
+      await sendMessage(res, recipient, responseMessage);
     } else {
-      await sendMessage(res,recipient, 'Product not found.');
-      res.status(200).json({message: 'Product not found'})
+      await sendMessage(res, recipient, 'Product not found.');
     }
   } catch (error) {
     console.log('Error querying database:', error)
@@ -67,7 +67,6 @@ const handleGreeting = async(res,response, recipient) => {
     try {
         const greetingMessage = response.answer;
         await sendMessage(res, recipient, greetingMessage);
-        res.status(200).json({message: 'Greeting responded'})
     } catch (error) {
         console.log('Error handling greeting:', error);
         await sendMessage(res, recipient, 'There was an error processing your request. Please try again later.');
@@ -78,30 +77,28 @@ const handleGreeting = async(res,response, recipient) => {
 
 const sendMessage = async(res, recipient, message) => {
   try {
-    await axios.post(
-      `${process.env.WHATSAPP_API_URL}`,
-      {
-        messaging_product: 'whatsapp',
-        to: recipient,
-        type: "text",
-        text: { 
-          body: 
-            message 
-
+      await axios.post(
+          `${process.env.WHATSAPP_API_URL}`,
+          {
+              messaging_product: 'whatsapp',
+              to: recipient,
+              type: "text",
+              text: { body: message },
           },
-      },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${process.env.WHATSAPP_API_TOKEN}`,
-        },
-      }
-    )
+          {
+              headers: {
+                  'Content-Type': 'application/json',
+                  Authorization: `Bearer ${process.env.WHATSAPP_API_TOKEN}`,
+              },
+          }
+      );
+      console.log('Message sent successfully:', message);
+      res.status(200).json({botResponse: message})
   } catch (error) {
-    console.log('Error sending message:', error);
-    res.status(500).json({message: 'Error sending message'})
+      console.error('Error sending message:', error.response ? error.response.data : error.message);
   }
-}
+};
+
 
 
 
@@ -112,24 +109,20 @@ const handleIncomingMessage = async (req, res) => {
     const incomingMessage = (incomingMessageMain).toLowerCase()
     const from = req.body.entry[0].changes[0].value.messages[0].from
 
-    console.log(incomingMessageMain)
-    // const incomingMessage = req.body.message.toLowerCase()
-    // const from = req.body.recipien
+  
     const manager = await setupNlp();
 
     const response = await manager.process('en', incomingMessage);
-    console.log(response);
 
-
+    
     if (response.intent === 'greeting') {
       await handleGreeting(res, response, from);
     } else if (response.intent === 'inquire_price') {
-      const productKeyword = 'product';
-      await handleInquiry(res, response, from, productKeyword);
+      await handleInquiry(res, response, from, incomingMessage);
     } else if (response.intent === 'select_item') {
       await handleSelectItem(res,from, incomingMessage, response);
     } else {
-      await sendMessage(from, 'Sorry, I did not understand that.');
+      await sendMessage(res, from, 'Sorry, I did not understand that.');
     }
 
   } catch (error) {

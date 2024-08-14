@@ -1,28 +1,23 @@
 const User = require('../models/userModel')
 const Product = require('../models/productModel');
-const jwt = require('jsonwebtoken')
-const secretKey = process.env.JWT_SECRET_KEY
-const tokenStore = new Map();
-const tokenBlackList = new Set();
-const usedTokens = {};
 
 
-const viewLogin = async (req, res) => {
-    res.render('login', { error: "", message: ""})
-}
 
-const viewHome = async (req, res) => {
-    res.render('index', { error: "", message: ""})
+const viewAdmin = async (req, res) => {
+    const user = await User.findOne({ email: req.user.email });
+    res.render('admin', {
+        user,
+        token: req.user.token, error: "", message: ""})
 }
 
 const viewProduct = async (req, res) => {
 
     const user = await User.findOne({ email: req.user.email });
-    const products = await Product.find({ userId: user._id }).select('name price')
+    const products = await Product.find({ userId: user._id }).select('name price picture_url')
     
 
     
-    res.render('admin', {
+    res.render('product', {
         user,
         products,
         token: req.user.token,
@@ -37,17 +32,14 @@ const addProduct = async (req, res) => {
     try {
         const { pName, pPrice } = req.body;
         const pImage = req.file ? req.file.filename : null;
-        const price = parseFloat(pPrice)
+        const userId = user._id
 
         await Product.create({
-            userId: req.user._id,
+            userId: userId,
             name: pName,
-            price: price,
-            image: pImage
+            price: parseFloat(pPrice),
+            picture_url: pImage
         });
-
-        console.log(price)
-
 
         const products = await Product.find({ userId: user._id });
         res.render('admin', { message: 'Product added successfully!', user, products, error: "", token: req.user.token });
@@ -60,111 +52,46 @@ const addProduct = async (req, res) => {
 
 
 const updateProduct = async (req, res) => {
+    const user = await User.findOne({email: req.user.email})
     try {
         const { pName, pPrice } = req.body;
-        const { id } = req.params;
+        const  productId  = req.params.id;
         const updateData = {
             name: pName,
             price: parseFloat(pPrice),
         };
 
         if (req.file) {
-            updateData.image = req.file.filename;
+            updateData.picture_url = req.file.filename;
         }
 
         await Product.findOneAndUpdate(
-            { _id: id, userId: req.user._id },
+            { _id: productId, userId: user._id },
             { $set: updateData }
         );
-
-        res.render('product', { message: "Product updated successfully"});
+        
+        const products = await Product.find({ userId: user._id });
+        res.render('product', { message: "Product updated successfully", error: "", user, products});
     } catch (error) {
-        res.render('product', { message: error.message });
+        res.render('product', { error: error.message , message: ""});
     }
 };
 
 
 
 const deleteProduct = async (req, res) => {
+    const user = await User.findOne({email: req.user.email})
+    const productId = req.params.id
+
     try {
-        await Product.findOneAndDelete({ _id: (req.params.id), userId: req.user._id });
-        res.render('admin', { message: `Product has been deleted`});
+        await Product.findOneAndDelete({ _id: productId, userId: user._id });
+        const products = await Product.find({ userId: user._id });
+        res.render('product', { message: `Product has been deleted`, error: "", products, user});
     } catch (error) {
-        res.render('index', { message: error.message });
+        res.render('index', { error: error.message, message: "" });
     }
 };
 
-
-const register = async(req, res) => {
-    const {name, email, password, cPassword, WhatsAppBussinessLink, businessName} = req.body
-    
-    const existingUser = await User.findOne({email})
-    
-
-    try{
-        if(password != cPassword){
-            return res.status(400).render('index', {error: 'Password do not match', message: ""})
-        }
-        if(existingUser){
-            return res.status(400).render('index', {error: 'Email has been registered!', message: ""})
-        }
-
-        const newUser = await User.create({ name, email, password, WhatsAppBussinessLink, businessName });
-        res.render('login', { message: `User registered successfully!`, newUser, error});
-    }catch(error) {
-        res.render('index', { message: "", error: error.message });
-    }
-
-}
-
-
-const login = async(req, res) => {
-    try{
-    const {email, password} = req.body
-    if(!email || !password){
-        return res.render('login', { error: 'Enter Email and password', message: "" });
-    }
-
-    const user = await User.findOne({email})
-
-    if(!user){
-        return res.render('login', { error: 'Invalid Email', message: "" });
-    }
-
-    const validPassword = (password === user.password)
-    if(!validPassword){
-        return res.render('login', { error: 'Invalid Password', message: "" });
-    }
-    const payload = {
-        userId: user._id,
-        userEmail: user.email,
-      };
-    
-      
-      const token =  jwt.sign(payload, secretKey, { expiresIn: '100m' });
-      res.cookie('token', token, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        maxAge: 24 * 60 * 60 * 1000 // 24 hours
-      });
-    res.redirect('/vendor', 200, { message: `Logged in successfully!` });
-} catch (error){
-    res.render('login', { error: error.message , message: ""});
-}
-}
-
-
-const logout = async(req, res) => {
-    const token = req.cookies.token;
-    
-
-    if (!token) {
-        return res.status(401).json({ message: 'No token provided' });
-    }
-
-    res.clearCookie('token'); // 'token' is the name of the cookie
-    return res.redirect('/login');
-}
 
 
 
@@ -174,9 +101,5 @@ module.exports = {
     viewProduct,
     updateProduct,
     deleteProduct,
-    register,
-    login,
-    logout,
-    viewHome,
-    viewLogin
+    viewAdmin
 }

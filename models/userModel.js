@@ -19,7 +19,7 @@ const userSchema = new Schema({
     maxlength: 50,
     trim: true,
   },
-  WhatsAppBussinessLink: {
+  whatsAppBussinessLink: {
     type: String,
     maxlength: 255,
     trim: true,

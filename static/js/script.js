@@ -11,21 +11,24 @@ window.onscroll = () =>{
    navbar.classList.remove('active');
 };
 
-
-document.querySelector('#close-edit').onclick = () =>{
-   document.querySelector('.edit-form-container').style.display = 'none';
-   window.location.href = 'admin.php';
-};
-
-//Modified functions
-function showEditForm(id, name, price, image) {
-   document.getElementById('update_p_id').value = id;
-   document.getElementById('update_p_name').value = name;
-   document.getElementById('update_p_price').value = price;
-   document.getElementById('edit-preview-image').src = '/uploaded_img/' + image;
-   document.querySelector('.edit-form-container').style.display = 'flex';
+function showEditForm(productId, name, price, image) {
+    document.getElementById(`edit-form-container-${productId}`).style.display = 'flex';
+    document.getElementById(`update_p_id-${productId}`).value = productId;
+    document.getElementById(`update_p_name-${productId}`).value = name;
+    document.getElementById(`update_p_price-${productId}`).value = price;
+    document.getElementById(`edit-preview-image-${productId}`).src = `/uploaded_img/${image}`;
 }
 
-function hideEditForm() {
-   document.querySelector('.edit-form-container').style.display = 'none';
+function hideEditForm(productId) {
+    document.getElementById(`edit-form-container-${productId}`).style.display = 'none';
+    window.location.href = '/product';
+}
+
+function showDeleteForm(productId) {
+    document.getElementById(`delete-form-container-${productId}`).style.display = 'flex';
+}
+
+function hideDeleteForm(productId) {
+    document.getElementById(`delete-form-container-${productId}`).style.display = 'none';
+    window.location.href = '/product';
 }
