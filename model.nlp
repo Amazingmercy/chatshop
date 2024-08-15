@@ -1,1 +1,6101 @@
-{"settings":{"tag":"nlp","threshold":0.5,"autoLoad":true,"autoSave":true,"modelFileName":"model.nlp","executeActionsBeforeAnswers":false,"calculateSentiment":true},"nluManager":{"settings":{"tag":"nlu-manager"},"locales":["en"],"languageNames":{},"domainManagers":{"en":{"settings":{"locale":"en","trainByDomain":false,"tag":"domain-manager-en","nluByDomain":{"default":{"className":"NeuralNlu","settings":{}}},"useStemDict":true},"stemDict":{"hello":{"intent":"greeting","domain":"default"},"hi":{"intent":"greeting","domain":"default"},"hey":{"intent":"greeting","domain":"default"},"good,morning":{"intent":"greeting","domain":"default"},"afternoon,good":{"intent":"greeting","domain":"default"},"evening,good":{"intent":"greeting","domain":"default"},"day,good":{"intent":"greeting","domain":"default"},"howdy":{"intent":"greeting","domain":"default"},"hi,there":{"intent":"greeting","domain":"default"},"s,up,what":{"intent":"greeting","domain":"default"},"are,how,you":{"intent":"greeting","domain":"default"},"going,how,it,s":{"intent":"greeting","domain":"default"},"greetings":{"intent":"greeting","domain":"default"},"meet,nice,to,you":{"intent":"greeting","domain":"default"},"meet,pleasure,to,you":{"intent":"greeting","domain":"default"},"hey,there":{"intent":"greeting","domain":"default"},"good,see,to,you":{"intent":"greeting","domain":"default"},"are,how,things":{"intent":"greeting","domain":"default"},"going,on,s,what":{"intent":"greeting","domain":"default"},"yo":{"intent":"greeting","domain":"default"},"how,life,s":{"intent":"greeting","domain":"default"},"%item%,a,how,is,much":{"intent":"inquire_price","domain":"default"},"%item%,is,of,price,the,what":{"intent":"inquire_price","domain":"default"},"%item%,can,cost,me,of,tell,the,you":{"intent":"inquire_price","domain":"default"},"%item%,of,price":{"intent":"inquire_price","domain":"default"},"%item%,cost,me,of,tell,the":{"intent":"inquire_price","domain":"default"},"%item%,for,price":{"intent":"inquire_price","domain":"default"},"%item%,cost,does,how,much":{"intent":"inquire_price","domain":"default"},"%item%,for,price,s,the,what":{"intent":"inquire_price","domain":"default"},"%item%,can,give,me,of,price,the,you":{"intent":"inquire_price","domain":"default"},"%item%,charge,do,for,how,much,you":{"intent":"inquire_price","domain":"default"},"%item%,for,how,i,much,pay,would":{"intent":"inquire_price","domain":"default"},"%item%,cost,is,of,the,what":{"intent":"inquire_price","domain":"default"},"%item%,for,give,me,price,the":{"intent":"inquire_price","domain":"default"},"%item%,do,for,sell,what,you":{"intent":"inquire_price","domain":"default"},"%item%,i,know,need,of,price,the,to":{"intent":"inquire_price","domain":"default"},"%item%,me,of,price,quote,the":{"intent":"inquire_price","domain":"default"},"%item%,i,the,want":{"intent":"select_item","domain":"default"},"%item%,i,like,order,the,to,would":{"intent":"select_item","domain":"default"},"%item%,give,me,please,the":{"intent":"select_item","domain":"default"},"%item%,i,need,the":{"intent":"select_item","domain":"default"},"%item%,give,me":{"intent":"select_item","domain":"default"},"%item%,send":{"intent":"select_item","domain":"default"},"%item%,buy,i,to,want":{"intent":"select_item","domain":"default"},"%item%,i,want":{"intent":"select_item","domain":"default"},"%item%,do,have,you":{"intent":"select_item","domain":"default"},"%item%,can,get,i,the":{"intent":"select_item","domain":"default"},"%item%,for,me,order":{"intent":"select_item","domain":"default"},"%item%,i,ll,take,the":{"intent":"select_item","domain":"default"},"%item%,for,me,reserve":{"intent":"select_item","domain":"default"},"%item%,i,like,would":{"intent":"select_item","domain":"default"},"%item%,get,me":{"intent":"select_item","domain":"default"},"%item%,can,provide,you":{"intent":"select_item","domain":"default"},"%item%,bring,me,the":{"intent":"select_item","domain":"default"},"%item%,am,i,in,interested":{"intent":"select_item","domain":"default"},"%item%,am,buying,i":{"intent":"select_item","domain":"default"},"%item%,buy,i,like,to,would":{"intent":"select_item","domain":"default"},"%item%,a,can,get,i":{"intent":"select_item","domain":"default"}},"intentDict":{"greeting":"default","inquire_price":"default","select_item":"default"},"sentences":[{"domain":"default","utterance":"hello","intent":"greeting"},{"domain":"default","utterance":"hi","intent":"greeting"},{"domain":"default","utterance":"hey","intent":"greeting"},{"domain":"default","utterance":"good morning","intent":"greeting"},{"domain":"default","utterance":"good afternoon","intent":"greeting"},{"domain":"default","utterance":"good evening","intent":"greeting"},{"domain":"default","utterance":"good day","intent":"greeting"},{"domain":"default","utterance":"howdy","intent":"greeting"},{"domain":"default","utterance":"hi there","intent":"greeting"},{"domain":"default","utterance":"what's up","intent":"greeting"},{"domain":"default","utterance":"how are you","intent":"greeting"},{"domain":"default","utterance":"how's it going","intent":"greeting"},{"domain":"default","utterance":"greetings","intent":"greeting"},{"domain":"default","utterance":"nice to meet you","intent":"greeting"},{"domain":"default","utterance":"pleasure to meet you","intent":"greeting"},{"domain":"default","utterance":"hey there","intent":"greeting"},{"domain":"default","utterance":"good to see you","intent":"greeting"},{"domain":"default","utterance":"how are things","intent":"greeting"},{"domain":"default","utterance":"what's going on","intent":"greeting"},{"domain":"default","utterance":"yo","intent":"greeting"},{"domain":"default","utterance":"how's life","intent":"greeting"},{"domain":"default","utterance":"how much is a %item%","intent":"inquire_price"},{"domain":"default","utterance":"what is the price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"can you tell me the cost of %item%","intent":"inquire_price"},{"domain":"default","utterance":"price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"tell me the cost of %item%","intent":"inquire_price"},{"domain":"default","utterance":"price for %item%","intent":"inquire_price"},{"domain":"default","utterance":"how much does %item% cost","intent":"inquire_price"},{"domain":"default","utterance":"what's the price for %item%","intent":"inquire_price"},{"domain":"default","utterance":"can you give me the price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"how much do you charge for %item%","intent":"inquire_price"},{"domain":"default","utterance":"how much would I pay for %item%","intent":"inquire_price"},{"domain":"default","utterance":"what is the cost of %item%","intent":"inquire_price"},{"domain":"default","utterance":"give me the price for %item%","intent":"inquire_price"},{"domain":"default","utterance":"what do you sell %item% for","intent":"inquire_price"},{"domain":"default","utterance":"I need to know the price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"quote me the price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"I want the %item%","intent":"select_item"},{"domain":"default","utterance":"I would like to order the %item%","intent":"select_item"},{"domain":"default","utterance":"please give me the %item%","intent":"select_item"},{"domain":"default","utterance":"I need the %item%","intent":"select_item"},{"domain":"default","utterance":"give me %item%","intent":"select_item"},{"domain":"default","utterance":"send %item%","intent":"select_item"},{"domain":"default","utterance":"I want to buy %item%","intent":"select_item"},{"domain":"default","utterance":"I want %item%","intent":"select_item"},{"domain":"default","utterance":"Do you have %item%","intent":"select_item"},{"domain":"default","utterance":"can I get the %item%","intent":"select_item"},{"domain":"default","utterance":"order %item% for me","intent":"select_item"},{"domain":"default","utterance":"I'll take the %item%","intent":"select_item"},{"domain":"default","utterance":"reserve %item% for me","intent":"select_item"},{"domain":"default","utterance":"I would like %item%","intent":"select_item"},{"domain":"default","utterance":"get me %item%","intent":"select_item"},{"domain":"default","utterance":"can you provide %item%","intent":"select_item"},{"domain":"default","utterance":"bring me the %item%","intent":"select_item"},{"domain":"default","utterance":"I am interested in %item%","intent":"select_item"},{"domain":"default","utterance":"I am buying %item%","intent":"select_item"},{"domain":"default","utterance":"I would like to buy %item%","intent":"select_item"},{"domain":"default","utterance":"Can I get a %item%","intent":"select_item"},{"domain":"default","utterance":"hello","intent":"greeting"},{"domain":"default","utterance":"hi","intent":"greeting"},{"domain":"default","utterance":"hey","intent":"greeting"},{"domain":"default","utterance":"good morning","intent":"greeting"},{"domain":"default","utterance":"good afternoon","intent":"greeting"},{"domain":"default","utterance":"good evening","intent":"greeting"},{"domain":"default","utterance":"good day","intent":"greeting"},{"domain":"default","utterance":"howdy","intent":"greeting"},{"domain":"default","utterance":"hi there","intent":"greeting"},{"domain":"default","utterance":"what's up","intent":"greeting"},{"domain":"default","utterance":"how are you","intent":"greeting"},{"domain":"default","utterance":"how's it going","intent":"greeting"},{"domain":"default","utterance":"greetings","intent":"greeting"},{"domain":"default","utterance":"nice to meet you","intent":"greeting"},{"domain":"default","utterance":"pleasure to meet you","intent":"greeting"},{"domain":"default","utterance":"hey there","intent":"greeting"},{"domain":"default","utterance":"good to see you","intent":"greeting"},{"domain":"default","utterance":"how are things","intent":"greeting"},{"domain":"default","utterance":"what's going on","intent":"greeting"},{"domain":"default","utterance":"yo","intent":"greeting"},{"domain":"default","utterance":"how's life","intent":"greeting"},{"domain":"default","utterance":"how much is a %item%","intent":"inquire_price"},{"domain":"default","utterance":"what is the price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"can you tell me the cost of %item%","intent":"inquire_price"},{"domain":"default","utterance":"price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"tell me the cost of %item%","intent":"inquire_price"},{"domain":"default","utterance":"price for %item%","intent":"inquire_price"},{"domain":"default","utterance":"how much does %item% cost","intent":"inquire_price"},{"domain":"default","utterance":"what's the price for %item%","intent":"inquire_price"},{"domain":"default","utterance":"can you give me the price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"how much do you charge for %item%","intent":"inquire_price"},{"domain":"default","utterance":"how much would I pay for %item%","intent":"inquire_price"},{"domain":"default","utterance":"what is the cost of %item%","intent":"inquire_price"},{"domain":"default","utterance":"give me the price for %item%","intent":"inquire_price"},{"domain":"default","utterance":"what do you sell %item% for","intent":"inquire_price"},{"domain":"default","utterance":"I need to know the price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"quote me the price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"I want the %item%","intent":"select_item"},{"domain":"default","utterance":"I would like to order the %item%","intent":"select_item"},{"domain":"default","utterance":"please give me the %item%","intent":"select_item"},{"domain":"default","utterance":"I need the %item%","intent":"select_item"},{"domain":"default","utterance":"give me %item%","intent":"select_item"},{"domain":"default","utterance":"send %item%","intent":"select_item"},{"domain":"default","utterance":"I want to buy %item%","intent":"select_item"},{"domain":"default","utterance":"I want %item%","intent":"select_item"},{"domain":"default","utterance":"Do you have %item%","intent":"select_item"},{"domain":"default","utterance":"can I get the %item%","intent":"select_item"},{"domain":"default","utterance":"order %item% for me","intent":"select_item"},{"domain":"default","utterance":"I'll take the %item%","intent":"select_item"},{"domain":"default","utterance":"reserve %item% for me","intent":"select_item"},{"domain":"default","utterance":"I would like %item%","intent":"select_item"},{"domain":"default","utterance":"get me %item%","intent":"select_item"},{"domain":"default","utterance":"can you provide %item%","intent":"select_item"},{"domain":"default","utterance":"bring me the %item%","intent":"select_item"},{"domain":"default","utterance":"I am interested in %item%","intent":"select_item"},{"domain":"default","utterance":"I am buying %item%","intent":"select_item"},{"domain":"default","utterance":"I would like to buy %item%","intent":"select_item"},{"domain":"default","utterance":"Can I get a %item%","intent":"select_item"},{"domain":"default","utterance":"hello","intent":"greeting"},{"domain":"default","utterance":"hi","intent":"greeting"},{"domain":"default","utterance":"hey","intent":"greeting"},{"domain":"default","utterance":"good morning","intent":"greeting"},{"domain":"default","utterance":"good afternoon","intent":"greeting"},{"domain":"default","utterance":"good evening","intent":"greeting"},{"domain":"default","utterance":"good day","intent":"greeting"},{"domain":"default","utterance":"howdy","intent":"greeting"},{"domain":"default","utterance":"hi there","intent":"greeting"},{"domain":"default","utterance":"what's up","intent":"greeting"},{"domain":"default","utterance":"how are you","intent":"greeting"},{"domain":"default","utterance":"how's it going","intent":"greeting"},{"domain":"default","utterance":"greetings","intent":"greeting"},{"domain":"default","utterance":"nice to meet you","intent":"greeting"},{"domain":"default","utterance":"pleasure to meet you","intent":"greeting"},{"domain":"default","utterance":"hey there","intent":"greeting"},{"domain":"default","utterance":"good to see you","intent":"greeting"},{"domain":"default","utterance":"how are things","intent":"greeting"},{"domain":"default","utterance":"what's going on","intent":"greeting"},{"domain":"default","utterance":"yo","intent":"greeting"},{"domain":"default","utterance":"how's life","intent":"greeting"},{"domain":"default","utterance":"how much is a %item%","intent":"inquire_price"},{"domain":"default","utterance":"what is the price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"can you tell me the cost of %item%","intent":"inquire_price"},{"domain":"default","utterance":"price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"tell me the cost of %item%","intent":"inquire_price"},{"domain":"default","utterance":"price for %item%","intent":"inquire_price"},{"domain":"default","utterance":"how much does %item% cost","intent":"inquire_price"},{"domain":"default","utterance":"what's the price for %item%","intent":"inquire_price"},{"domain":"default","utterance":"can you give me the price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"how much do you charge for %item%","intent":"inquire_price"},{"domain":"default","utterance":"how much would I pay for %item%","intent":"inquire_price"},{"domain":"default","utterance":"what is the cost of %item%","intent":"inquire_price"},{"domain":"default","utterance":"give me the price for %item%","intent":"inquire_price"},{"domain":"default","utterance":"what do you sell %item% for","intent":"inquire_price"},{"domain":"default","utterance":"I need to know the price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"quote me the price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"I want the %item%","intent":"select_item"},{"domain":"default","utterance":"I would like to order the %item%","intent":"select_item"},{"domain":"default","utterance":"please give me the %item%","intent":"select_item"},{"domain":"default","utterance":"I need the %item%","intent":"select_item"},{"domain":"default","utterance":"give me %item%","intent":"select_item"},{"domain":"default","utterance":"send %item%","intent":"select_item"},{"domain":"default","utterance":"I want to buy %item%","intent":"select_item"},{"domain":"default","utterance":"I want %item%","intent":"select_item"},{"domain":"default","utterance":"Do you have %item%","intent":"select_item"},{"domain":"default","utterance":"can I get the %item%","intent":"select_item"},{"domain":"default","utterance":"order %item% for me","intent":"select_item"},{"domain":"default","utterance":"I'll take the %item%","intent":"select_item"},{"domain":"default","utterance":"reserve %item% for me","intent":"select_item"},{"domain":"default","utterance":"I would like %item%","intent":"select_item"},{"domain":"default","utterance":"get me %item%","intent":"select_item"},{"domain":"default","utterance":"can you provide %item%","intent":"select_item"},{"domain":"default","utterance":"bring me the %item%","intent":"select_item"},{"domain":"default","utterance":"I am interested in %item%","intent":"select_item"},{"domain":"default","utterance":"I am buying %item%","intent":"select_item"},{"domain":"default","utterance":"I would like to buy %item%","intent":"select_item"},{"domain":"default","utterance":"Can I get a %item%","intent":"select_item"},{"domain":"default","utterance":"hello","intent":"greeting"},{"domain":"default","utterance":"hi","intent":"greeting"},{"domain":"default","utterance":"hey","intent":"greeting"},{"domain":"default","utterance":"good morning","intent":"greeting"},{"domain":"default","utterance":"good afternoon","intent":"greeting"},{"domain":"default","utterance":"good evening","intent":"greeting"},{"domain":"default","utterance":"good day","intent":"greeting"},{"domain":"default","utterance":"howdy","intent":"greeting"},{"domain":"default","utterance":"hi there","intent":"greeting"},{"domain":"default","utterance":"what's up","intent":"greeting"},{"domain":"default","utterance":"how are you","intent":"greeting"},{"domain":"default","utterance":"how's it going","intent":"greeting"},{"domain":"default","utterance":"greetings","intent":"greeting"},{"domain":"default","utterance":"nice to meet you","intent":"greeting"},{"domain":"default","utterance":"pleasure to meet you","intent":"greeting"},{"domain":"default","utterance":"hey there","intent":"greeting"},{"domain":"default","utterance":"good to see you","intent":"greeting"},{"domain":"default","utterance":"how are things","intent":"greeting"},{"domain":"default","utterance":"what's going on","intent":"greeting"},{"domain":"default","utterance":"yo","intent":"greeting"},{"domain":"default","utterance":"how's life","intent":"greeting"},{"domain":"default","utterance":"how much is a %item%","intent":"inquire_price"},{"domain":"default","utterance":"what is the price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"can you tell me the cost of %item%","intent":"inquire_price"},{"domain":"default","utterance":"price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"tell me the cost of %item%","intent":"inquire_price"},{"domain":"default","utterance":"price for %item%","intent":"inquire_price"},{"domain":"default","utterance":"how much does %item% cost","intent":"inquire_price"},{"domain":"default","utterance":"what's the price for %item%","intent":"inquire_price"},{"domain":"default","utterance":"can you give me the price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"how much do you charge for %item%","intent":"inquire_price"},{"domain":"default","utterance":"how much would I pay for %item%","intent":"inquire_price"},{"domain":"default","utterance":"what is the cost of %item%","intent":"inquire_price"},{"domain":"default","utterance":"give me the price for %item%","intent":"inquire_price"},{"domain":"default","utterance":"what do you sell %item% for","intent":"inquire_price"},{"domain":"default","utterance":"I need to know the price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"quote me the price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"I want the %item%","intent":"select_item"},{"domain":"default","utterance":"I would like to order the %item%","intent":"select_item"},{"domain":"default","utterance":"please give me the %item%","intent":"select_item"},{"domain":"default","utterance":"I need the %item%","intent":"select_item"},{"domain":"default","utterance":"give me %item%","intent":"select_item"},{"domain":"default","utterance":"send %item%","intent":"select_item"},{"domain":"default","utterance":"I want to buy %item%","intent":"select_item"},{"domain":"default","utterance":"I want %item%","intent":"select_item"},{"domain":"default","utterance":"Do you have %item%","intent":"select_item"},{"domain":"default","utterance":"can I get the %item%","intent":"select_item"},{"domain":"default","utterance":"order %item% for me","intent":"select_item"},{"domain":"default","utterance":"I'll take the %item%","intent":"select_item"},{"domain":"default","utterance":"reserve %item% for me","intent":"select_item"},{"domain":"default","utterance":"I would like %item%","intent":"select_item"},{"domain":"default","utterance":"get me %item%","intent":"select_item"},{"domain":"default","utterance":"can you provide %item%","intent":"select_item"},{"domain":"default","utterance":"bring me the %item%","intent":"select_item"},{"domain":"default","utterance":"I am interested in %item%","intent":"select_item"},{"domain":"default","utterance":"I am buying %item%","intent":"select_item"},{"domain":"default","utterance":"I would like to buy %item%","intent":"select_item"},{"domain":"default","utterance":"Can I get a %item%","intent":"select_item"},{"domain":"default","utterance":"hello","intent":"greeting"},{"domain":"default","utterance":"hi","intent":"greeting"},{"domain":"default","utterance":"hey","intent":"greeting"},{"domain":"default","utterance":"good morning","intent":"greeting"},{"domain":"default","utterance":"good afternoon","intent":"greeting"},{"domain":"default","utterance":"good evening","intent":"greeting"},{"domain":"default","utterance":"good day","intent":"greeting"},{"domain":"default","utterance":"howdy","intent":"greeting"},{"domain":"default","utterance":"hi there","intent":"greeting"},{"domain":"default","utterance":"what's up","intent":"greeting"},{"domain":"default","utterance":"how are you","intent":"greeting"},{"domain":"default","utterance":"how's it going","intent":"greeting"},{"domain":"default","utterance":"greetings","intent":"greeting"},{"domain":"default","utterance":"nice to meet you","intent":"greeting"},{"domain":"default","utterance":"pleasure to meet you","intent":"greeting"},{"domain":"default","utterance":"hey there","intent":"greeting"},{"domain":"default","utterance":"good to see you","intent":"greeting"},{"domain":"default","utterance":"how are things","intent":"greeting"},{"domain":"default","utterance":"what's going on","intent":"greeting"},{"domain":"default","utterance":"yo","intent":"greeting"},{"domain":"default","utterance":"how's life","intent":"greeting"},{"domain":"default","utterance":"how much is a %item%","intent":"inquire_price"},{"domain":"default","utterance":"what is the price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"can you tell me the cost of %item%","intent":"inquire_price"},{"domain":"default","utterance":"price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"tell me the cost of %item%","intent":"inquire_price"},{"domain":"default","utterance":"price for %item%","intent":"inquire_price"},{"domain":"default","utterance":"how much does %item% cost","intent":"inquire_price"},{"domain":"default","utterance":"what's the price for %item%","intent":"inquire_price"},{"domain":"default","utterance":"can you give me the price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"how much do you charge for %item%","intent":"inquire_price"},{"domain":"default","utterance":"how much would I pay for %item%","intent":"inquire_price"},{"domain":"default","utterance":"what is the cost of %item%","intent":"inquire_price"},{"domain":"default","utterance":"give me the price for %item%","intent":"inquire_price"},{"domain":"default","utterance":"what do you sell %item% for","intent":"inquire_price"},{"domain":"default","utterance":"I need to know the price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"quote me the price of %item%","intent":"inquire_price"},{"domain":"default","utterance":"I want the %item%","intent":"select_item"},{"domain":"default","utterance":"I would like to order the %item%","intent":"select_item"},{"domain":"default","utterance":"please give me the %item%","intent":"select_item"},{"domain":"default","utterance":"I need the %item%","intent":"select_item"},{"domain":"default","utterance":"give me %item%","intent":"select_item"},{"domain":"default","utterance":"send %item%","intent":"select_item"},{"domain":"default","utterance":"I want to buy %item%","intent":"select_item"},{"domain":"default","utterance":"I want %item%","intent":"select_item"},{"domain":"default","utterance":"Do you have %item%","intent":"select_item"},{"domain":"default","utterance":"can I get the %item%","intent":"select_item"},{"domain":"default","utterance":"order %item% for me","intent":"select_item"},{"domain":"default","utterance":"I'll take the %item%","intent":"select_item"},{"domain":"default","utterance":"reserve %item% for me","intent":"select_item"},{"domain":"default","utterance":"I would like %item%","intent":"select_item"},{"domain":"default","utterance":"get me %item%","intent":"select_item"},{"domain":"default","utterance":"can you provide %item%","intent":"select_item"},{"domain":"default","utterance":"bring me the %item%","intent":"select_item"},{"domain":"default","utterance":"I am interested in %item%","intent":"select_item"},{"domain":"default","utterance":"I am buying %item%","intent":"select_item"},{"domain":"default","utterance":"I would like to buy %item%","intent":"select_item"},{"domain":"default","utterance":"Can I get a %item%","intent":"select_item"}],"domains":{"master_domain":{"settings":{"locale":"en","tag":"nlu-en","keepStopwords":true,"nonefeatureValue":1,"nonedeltaMultiplier":1.2,"spellCheck":false,"spellCheckDistance":1,"filterZeros":true,"log":true},"features":{"hello":1,"hi":1,"hey":1,"good":1,"morning":1,"afternoon":1,"evening":1,"day":1,"howdy":1,"there":1,"what":1,"s":1,"up":1,"how":1,"are":1,"you":1,"it":1,"going":1,"greetings":1,"nice":1,"to":1,"meet":1,"pleasure":1,"see":1,"things":1,"on":1,"yo":1,"life":1,"much":1,"is":1,"a":1,"%item%":1,"the":1,"price":1,"of":1,"can":1,"tell":1,"me":1,"cost":1,"for":1,"does":1,"give":1,"do":1,"charge":1,"would":1,"i":1,"pay":1,"sell":1,"need":1,"know":1,"quote":1,"want":1,"like":1,"order":1,"please":1,"send":1,"buy":1,"have":1,"get":1,"ll":1,"take":1,"reserve":1,"provide":1,"bring":1,"am":1,"interested":1,"in":1,"buying":1},"intents":{"greeting":1,"inquire_price":1,"select_item":1},"intentFeatures":{"greeting":{"hello":1,"hi":1,"hey":1,"good":1,"morning":1,"afternoon":1,"evening":1,"day":1,"howdy":1,"there":1,"what":1,"s":1,"up":1,"how":1,"are":1,"you":1,"it":1,"going":1,"greetings":1,"nice":1,"to":1,"meet":1,"pleasure":1,"see":1,"things":1,"on":1,"yo":1,"life":1},"inquire_price":{"how":1,"much":1,"is":1,"a":1,"%item%":1,"what":1,"the":1,"price":1,"of":1,"can":1,"you":1,"tell":1,"me":1,"cost":1,"for":1,"does":1,"s":1,"give":1,"do":1,"charge":1,"would":1,"i":1,"pay":1,"sell":1,"need":1,"to":1,"know":1,"quote":1},"select_item":{"i":1,"want":1,"the":1,"%item%":1,"would":1,"like":1,"to":1,"order":1,"please":1,"give":1,"me":1,"need":1,"send":1,"buy":1,"do":1,"you":1,"have":1,"can":1,"get":1,"for":1,"ll":1,"take":1,"reserve":1,"provide":1,"bring":1,"am":1,"interested":1,"in":1,"buying":1,"a":1}},"featuresToIntent":{"hello":["greeting"],"hi":["greeting"],"hey":["greeting"],"good":["greeting"],"morning":["greeting"],"afternoon":["greeting"],"evening":["greeting"],"day":["greeting"],"howdy":["greeting"],"there":["greeting"],"what":["greeting","inquire_price"],"s":["greeting","inquire_price"],"up":["greeting"],"how":["greeting","inquire_price"],"are":["greeting"],"you":["greeting","inquire_price","select_item"],"it":["greeting"],"going":["greeting"],"greetings":["greeting"],"nice":["greeting"],"to":["greeting","inquire_price","select_item"],"meet":["greeting"],"pleasure":["greeting"],"see":["greeting"],"things":["greeting"],"on":["greeting"],"yo":["greeting"],"life":["greeting"],"much":["inquire_price"],"is":["inquire_price"],"a":["inquire_price","select_item"],"%item%":["inquire_price","select_item"],"the":["inquire_price","select_item"],"price":["inquire_price"],"of":["inquire_price"],"can":["inquire_price","select_item"],"tell":["inquire_price"],"me":["inquire_price","select_item"],"cost":["inquire_price"],"for":["inquire_price","select_item"],"does":["inquire_price"],"give":["inquire_price","select_item"],"do":["inquire_price","select_item"],"charge":["inquire_price"],"would":["inquire_price","select_item"],"i":["inquire_price","select_item"],"pay":["inquire_price"],"sell":["inquire_price"],"need":["inquire_price","select_item"],"know":["inquire_price"],"quote":["inquire_price"],"want":["select_item"],"like":["select_item"],"order":["select_item"],"please":["select_item"],"send":["select_item"],"buy":["select_item"],"have":["select_item"],"get":["select_item"],"ll":["select_item"],"take":["select_item"],"reserve":["select_item"],"provide":["select_item"],"bring":["select_item"],"am":["select_item"],"interested":["select_item"],"in":["select_item"],"buying":["select_item"]},"neuralNetwork":{"settings":{"locale":"en","tag":"nlu-en","keepStopwords":true,"nonefeatureValue":1,"nonedeltaMultiplier":1.2,"spellCheck":false,"spellCheckDistance":1,"filterZeros":true,"log":true},"features":["hello","hi","hey","good","morning","afternoon","evening","day","howdy","there","what","s","up","how","are","you","it","going","greetings","nice","to","meet","pleasure","see","things","on","yo","life","much","is","a","%item%","the","price","of","can","tell","me","cost","for","does","give","do","charge","would","i","pay","sell","need","know","quote","want","like","order","please","send","buy","have","get","ll","take","reserve","provide","bring","am","interested","in","buying"],"intents":["greeting","inquire_price","select_item"],"perceptrons":[[3.5745935440063477,3.569209337234497,3.5692479610443115,2.8010764122009277,0.7721644639968872,0.7721779346466064,0.7721872925758362,0.7721949219703674,3.5738534927368164,0.005854574032127857,0.258530855178833,2.0781660079956055,1.236642599105835,0.8015076518058777,2.286073923110962,0.48453274369239807,0.05005961284041405,0.6434645056724548,3.5739505290985107,0.8377289772033691,0.5756540298461914,1.6754721403121948,0.8377525806427002,-0.2876400649547577,0.4868287146091461,0.5934028625488281,3.574341058731079,0.6940728425979614,-2.1371099948883057,-1.263067603111267,-0.7062919735908508,-9.347368240356445,-1.9680861234664917,-1.7932583093643188,-1.5974690914154053,-1.2293576002120972,-0.5264931321144104,-1.2491357326507568,-1.1909098625183105,-1.8991539478302002,-0.47045090794563293,-0.32194146513938904,-1.4405361413955688,-0.3660697340965271,-0.3765309453010559,-1.1811655759811401,-0.05779244005680084,-0.36678484082221985,0,0,0,-0.6164488196372986,-0.2613975703716278,-0.09707784652709961,0,-1.364787220954895,-0.6254327297210693,-0.4429577589035034,-0.15642818808555603,0,0,0,-0.6197215914726257,0,-0.13828738033771515,-0.05999584496021271,-0.05999584496021271,-0.07661544531583786,10.712143482685855],[-0.01619100198149681,-0.031581781804561615,-0.014905671589076519,-0.06210855022072792,-0.012635324150323868,-0.01137402094900608,-0.010071066208183765,-0.008828193880617619,-0.012537583708763123,-0.010464505292475224,-0.18999312818050385,-0.43915531039237976,-0.37316226959228516,2.3048272132873535,-2.042724370956421,0.813385546207428,-0.48211202025413513,-0.6920294761657715,0,-0.021154891699552536,0.3737069070339203,-0.04264828562736511,-0.02122608944773674,-0.0014574496308341622,-0.42393118143081665,-0.15794827044010162,0,-0.7177174091339111,5.587897300720215,0.1690169870853424,5.317440986633301,1.8679630756378174,0.63104248046875,7.464932441711426,6.031476020812988,-0.7516069412231445,2.693235158920288,-2.324328899383545,6.664676666259766,6.13707160949707,-0.8613850474357605,1.679648995399475,0.97049480676651,-2.1965200901031494,0.7070841789245605,-2.8609163761138916,1.70000422000885,5.792477130889893,0.41990962624549866,1.4946469068527222,1.6764875650405884,-1.5965936183929443,-0.8260706067085266,-4.566603660583496,-1.323026180267334,-1.548223614692688,-0.042087431997060776,-2.623384714126587,-2.4070615768432617,-0.03666131943464279,-0.03666131943464279,-4.561770915985107,-1.6805483102798462,-0.04657457768917084,0,0,0,0,-1.1207235986442],[-0.9012004137039185,-0.9714212417602539,-0.9238064885139465,-1.2244486808776855,-0.21943040192127228,-0.19751174747943878,-0.17488448321819305,-0.15330688655376434,-0.8580632209777832,-0.4837298095226288,-4.627199172973633,-0.8911980986595154,-0.10165761411190033,-4.41677713394165,-0.23111791908740997,-0.7777748107910156,-0.08297236263751984,-0.17053118348121643,-0.8384472131729126,-0.3742072582244873,-1.9374114274978638,-0.7988172173500061,-0.3271237313747406,-0.15499675273895264,-0.04960556700825691,-0.046072643250226974,-0.8197146058082581,-0.028365926817059517,-3.852872610092163,-2.357970714569092,-1.141448736190796,9.805225372314453,-1.063116431236267,-9.707174301147461,-6.80787992477417,1.3906586170196533,-3.454345703125,3.813779592514038,-3.641523838043213,-3.189704656600952,-0.15013208985328674,-0.3036738932132721,0.7002288103103638,-0.3946869969367981,-0.7459104657173157,3.4874460697174072,-1.84526526927948,-2.6519246101379395,1.2366597652435303,-0.43199262022972107,0,0.6271979212760925,1.0988677740097046,2.96593976020813,1.302503228187561,3.6666295528411865,1.6190122365951538,3.793884515762329,-0.04767857491970062,0.6595121622085571,0.6595121622085571,3.1461100578308105,3.1256039142608643,1.0684605836868286,0.16846081614494324,0.056192073971033096,0.056192073971033096,0.11166083067655563,0.7569707587663097]]}}}}},"intentDomains":{},"extraSentences":[["en","hello"],["en","hi"],["en","hey"],["en","good morning"],["en","good afternoon"],["en","good evening"],["en","good day"],["en","howdy"],["en","hi there"],["en","what's up"],["en","how are you"],["en","how's it going"],["en","greetings"],["en","nice to meet you"],["en","pleasure to meet you"],["en","hey there"],["en","good to see you"],["en","how are things"],["en","what's going on"],["en","yo"],["en","how's life"],["en","how much is a %item%"],["en","what is the price of %item%"],["en","can you tell me the cost of %item%"],["en","price of %item%"],["en","tell me the cost of %item%"],["en","price for %item%"],["en","how much does %item% cost"],["en","what's the price for %item%"],["en","can you give me the price of %item%"],["en","how much do you charge for %item%"],["en","how much would I pay for %item%"],["en","what is the cost of %item%"],["en","give me the price for %item%"],["en","what do you sell %item% for"],["en","I need to know the price of %item%"],["en","quote me the price of %item%"],["en","I want the %item%"],["en","I would like to order the %item%"],["en","please give me the %item%"],["en","I need the %item%"],["en","give me %item%"],["en","send %item%"],["en","I want to buy %item%"],["en","I want %item%"],["en","Do you have %item%"],["en","can I get the %item%"],["en","order %item% for me"],["en","I'll take the %item%"],["en","reserve %item% for me"],["en","I would like %item%"],["en","get me %item%"],["en","can you provide %item%"],["en","bring me the %item%"],["en","I am interested in %item%"],["en","I am buying %item%"],["en","I would like to buy %item%"],["en","Can I get a %item%"],["en","hello"],["en","hi"],["en","hey"],["en","good morning"],["en","good afternoon"],["en","good evening"],["en","good day"],["en","howdy"],["en","hi there"],["en","what's up"],["en","how are you"],["en","how's it going"],["en","greetings"],["en","nice to meet you"],["en","pleasure to meet you"],["en","hey there"],["en","good to see you"],["en","how are things"],["en","what's going on"],["en","yo"],["en","how's life"],["en","how much is a %item%"],["en","what is the price of %item%"],["en","can you tell me the cost of %item%"],["en","price of %item%"],["en","tell me the cost of %item%"],["en","price for %item%"],["en","how much does %item% cost"],["en","what's the price for %item%"],["en","can you give me the price of %item%"],["en","how much do you charge for %item%"],["en","how much would I pay for %item%"],["en","what is the cost of %item%"],["en","give me the price for %item%"],["en","what do you sell %item% for"],["en","I need to know the price of %item%"],["en","quote me the price of %item%"],["en","I want the %item%"],["en","I would like to order the %item%"],["en","please give me the %item%"],["en","I need the %item%"],["en","give me %item%"],["en","send %item%"],["en","I want to buy %item%"],["en","I want %item%"],["en","Do you have %item%"],["en","can I get the %item%"],["en","order %item% for me"],["en","I'll take the %item%"],["en","reserve %item% for me"],["en","I would like %item%"],["en","get me %item%"],["en","can you provide %item%"],["en","bring me the %item%"],["en","I am interested in %item%"],["en","I am buying %item%"],["en","I would like to buy %item%"],["en","Can I get a %item%"],["en","hello"],["en","hi"],["en","hey"],["en","good morning"],["en","good afternoon"],["en","good evening"],["en","good day"],["en","howdy"],["en","hi there"],["en","what's up"],["en","how are you"],["en","how's it going"],["en","greetings"],["en","nice to meet you"],["en","pleasure to meet you"],["en","hey there"],["en","good to see you"],["en","how are things"],["en","what's going on"],["en","yo"],["en","how's life"],["en","how much is a %item%"],["en","what is the price of %item%"],["en","can you tell me the cost of %item%"],["en","price of %item%"],["en","tell me the cost of %item%"],["en","price for %item%"],["en","how much does %item% cost"],["en","what's the price for %item%"],["en","can you give me the price of %item%"],["en","how much do you charge for %item%"],["en","how much would I pay for %item%"],["en","what is the cost of %item%"],["en","give me the price for %item%"],["en","what do you sell %item% for"],["en","I need to know the price of %item%"],["en","quote me the price of %item%"],["en","I want the %item%"],["en","I would like to order the %item%"],["en","please give me the %item%"],["en","I need the %item%"],["en","give me %item%"],["en","send %item%"],["en","I want to buy %item%"],["en","I want %item%"],["en","Do you have %item%"],["en","can I get the %item%"],["en","order %item% for me"],["en","I'll take the %item%"],["en","reserve %item% for me"],["en","I would like %item%"],["en","get me %item%"],["en","can you provide %item%"],["en","bring me the %item%"],["en","I am interested in %item%"],["en","I am buying %item%"],["en","I would like to buy %item%"],["en","Can I get a %item%"],["en","hello"],["en","hi"],["en","hey"],["en","good morning"],["en","good afternoon"],["en","good evening"],["en","good day"],["en","howdy"],["en","hi there"],["en","what's up"],["en","how are you"],["en","how's it going"],["en","greetings"],["en","nice to meet you"],["en","pleasure to meet you"],["en","hey there"],["en","good to see you"],["en","how are things"],["en","what's going on"],["en","yo"],["en","how's life"],["en","how much is a %item%"],["en","what is the price of %item%"],["en","can you tell me the cost of %item%"],["en","price of %item%"],["en","tell me the cost of %item%"],["en","price for %item%"],["en","how much does %item% cost"],["en","what's the price for %item%"],["en","can you give me the price of %item%"],["en","how much do you charge for %item%"],["en","how much would I pay for %item%"],["en","what is the cost of %item%"],["en","give me the price for %item%"],["en","what do you sell %item% for"],["en","I need to know the price of %item%"],["en","quote me the price of %item%"],["en","I want the %item%"],["en","I would like to order the %item%"],["en","please give me the %item%"],["en","I need the %item%"],["en","give me %item%"],["en","send %item%"],["en","I want to buy %item%"],["en","I want %item%"],["en","Do you have %item%"],["en","can I get the %item%"],["en","order %item% for me"],["en","I'll take the %item%"],["en","reserve %item% for me"],["en","I would like %item%"],["en","get me %item%"],["en","can you provide %item%"],["en","bring me the %item%"],["en","I am interested in %item%"],["en","I am buying %item%"],["en","I would like to buy %item%"],["en","Can I get a %item%"],["en","hello"],["en","hi"],["en","hey"],["en","good morning"],["en","good afternoon"],["en","good evening"],["en","good day"],["en","howdy"],["en","hi there"],["en","what's up"],["en","how are you"],["en","how's it going"],["en","greetings"],["en","nice to meet you"],["en","pleasure to meet you"],["en","hey there"],["en","good to see you"],["en","how are things"],["en","what's going on"],["en","yo"],["en","how's life"],["en","how much is a %item%"],["en","what is the price of %item%"],["en","can you tell me the cost of %item%"],["en","price of %item%"],["en","tell me the cost of %item%"],["en","price for %item%"],["en","how much does %item% cost"],["en","what's the price for %item%"],["en","can you give me the price of %item%"],["en","how much do you charge for %item%"],["en","how much would I pay for %item%"],["en","what is the cost of %item%"],["en","give me the price for %item%"],["en","what do you sell %item% for"],["en","I need to know the price of %item%"],["en","quote me the price of %item%"],["en","I want the %item%"],["en","I would like to order the %item%"],["en","please give me the %item%"],["en","I need the %item%"],["en","give me %item%"],["en","send %item%"],["en","I want to buy %item%"],["en","I want %item%"],["en","Do you have %item%"],["en","can I get the %item%"],["en","order %item% for me"],["en","I'll take the %item%"],["en","reserve %item% for me"],["en","I would like %item%"],["en","get me %item%"],["en","can you provide %item%"],["en","bring me the %item%"],["en","I am interested in %item%"],["en","I am buying %item%"],["en","I would like to buy %item%"],["en","Can I get a %item%"]]},"ner":{"settings":{"tag":"ner"},"rules":{"en":{"item":{"name":"item","type":"trim","rules":[{"type":"between","leftWords":["the"],"rightWords":[null],"regex":"/(?<= the )(.*)(?= undefined )/gi","options":{}},"/bag/gi","/shoes/gi","/shirt/gi",{"type":"between","leftWords":["the"],"rightWords":[null],"regex":"/(?<= the )(.*)(?= undefined )/gi","options":{}},"/bag/gi","/shoes/gi","/shirt/gi",{"type":"between","leftWords":["the"],"rightWords":[null],"regex":"/(?<= the )(.*)(?= undefined )/gi","options":{}},"/bag/gi","/shoes/gi","/shirt/gi",{"type":"between","leftWords":["the"],"rightWords":[null],"regex":"/(?<= the )(.*)(?= undefined )/gi","options":{}},"/bag/gi","/shoes/gi","/shirt/gi",{"type":"between","leftWords":["the"],"rightWords":[null],"regex":"/(?<= the )(.*)(?= undefined )/gi","options":{}},"/bag/gi","/shoes/gi","/shirt/gi"]}}}},"nlgManager":{"settings":{"tag":"nlg-manager"},"responses":{"en":{"greeting":[{"answer":"Hello! How can I assist you today?"},{"answer":"Hey there! What can I do for you?"},{"answer":"Good morning! How may I help you?"}],"inquire_price":[{"answer":"Which item do you want?"},{"answer":"what kind are you interested in?"},{"answer":"Please specify the item you want."},{"answer":"Can you tell me which product you're asking about?"},{"answer":"I can help with that! Which item are you referring to?"},{"answer":"Which specific product are you inquiring about?"},{"answer":"Please let me know the name of the item you're interested in."},{"answer":"Could you specify the product you're asking about?"},{"answer":"Which item would you like the price for?"},{"answer":"I need to know the exact product you want to check."},{"answer":"Can you provide the name of the item you're interested in?"},{"answer":"Please provide the name of the product you want to know the price of."},{"answer":"Which item's price are you looking for?"}],"select_item":[{"answer":"Ok great, chat the vendor up"},{"answer":"Excellent choice! Contact the vendor for details."},{"answer":"Got it! Reach out to the vendor for further assistance."},{"answer":"Great pick! You can contact the vendor for more information."},{"answer":"Awesome! Please get in touch with the vendor for details."},{"answer":"Nice choice! The vendor will assist you with the rest."},{"answer":"Perfect! The vendor is available for any further questions."},{"answer":"Good choice! You can now contact the vendor to proceed."},{"answer":"That's a great selection! The vendor will help you out from here."},{"answer":"You've selected well! Get in touch with the vendor for more."},{"answer":"Understood! The vendor is ready to assist you further."},{"answer":"Great! Please contact the vendor for any additional details."},{"answer":"Fantastic choice! The vendor will guide you with the next steps."}]}}},"actionManager":{"settings":{"tag":"action-manager"},"actions":{}},"slotManager":{}}
+{
+  "settings": {
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "a,how,is,much": {
+            "intent": "inquire_price",
+            "domain": "default"
+          },
+          "a,buy,i,to,want": {
+            "intent": "inquire_price",
+            "domain": "default"
+          },
+          "buy,i,to,want": {
+            "intent": "inquire_price",
+            "domain": "default"
+          },
+          "a,can,get,i": {
+            "intent": "select_item",
+            "domain": "default"
+          },
+          "is,of,price,the,what": {
+            "intent": "inquire_price",
+            "domain": "default"
+          },
+          "can,cost,me,of,tell,the,you": {
+            "intent": "inquire_price",
+            "domain": "default"
+          },
+          "of,price": {
+            "intent": "inquire_price",
+            "domain": "default"
+          },
+          "cost,me,of,tell,the": {
+            "intent": "inquire_price",
+            "domain": "default"
+          },
+          "for,price": {
+            "intent": "inquire_price",
+            "domain": "default"
+          },
+          "cost,does,how,much": {
+            "intent": "inquire_price",
+            "domain": "default"
+          },
+          "for,price,s,the,what": {
+            "intent": "inquire_price",
+            "domain": "default"
+          },
+          "can,give,me,of,price,the,you": {
+            "intent": "inquire_price",
+            "domain": "default"
+          },
+          "charge,do,for,how,much,you": {
+            "intent": "inquire_price",
+            "domain": "default"
+          },
+          "for,how,i,much,pay,would": {
+            "intent": "inquire_price",
+            "domain": "default"
+          },
+          "cost,is,of,the,what": {
+            "intent": "inquire_price",
+            "domain": "default"
+          },
+          "for,give,me,price,the": {
+            "intent": "inquire_price",
+            "domain": "default"
+          },
+          "do,for,sell,what,you": {
+            "intent": "inquire_price",
+            "domain": "default"
+          },
+          "i,know,need,of,price,the,to": {
+            "intent": "inquire_price",
+            "domain": "default"
+          },
+          "me,of,price,quote,the": {
+            "intent": "inquire_price",
+            "domain": "default"
+          },
+          "i,the,want": {
+            "intent": "select_item",
+            "domain": "default"
+          },
+          "i,want": {
+            "intent": "select_item",
+            "domain": "default"
+          },
+          "i,like,the,would": {
+            "intent": "select_item",
+            "domain": "default"
+          },
+          "i,this,want,yes": {
+            "intent": "select_item",
+            "domain": "default"
+          },
+          "i,like,order,the,to,would": {
+            "intent": "select_item",
+            "domain": "default"
+          },
+          "give,me,please,the": {
+            "intent": "select_item",
+            "domain": "default"
+          },
+          "i,need,the": {
+            "intent": "select_item",
+            "domain": "default"
+          },
+          "give,me": {
+            "intent": "select_item",
+            "domain": "default"
+          },
+          "send": {
+            "intent": "select_item",
+            "domain": "default"
+          },
+          "do,have,you": {
+            "intent": "select_item",
+            "domain": "default"
+          },
+          "can,get,i,the": {
+            "intent": "select_item",
+            "domain": "default"
+          },
+          "for,me,order": {
+            "intent": "select_item",
+            "domain": "default"
+          },
+          "i,ll,take,the": {
+            "intent": "select_item",
+            "domain": "default"
+          },
+          "for,me,reserve": {
+            "intent": "select_item",
+            "domain": "default"
+          },
+          "get,me": {
+            "intent": "select_item",
+            "domain": "default"
+          },
+          "can,provide,you": {
+            "intent": "select_item",
+            "domain": "default"
+          },
+          "bring,me,the": {
+            "intent": "select_item",
+            "domain": "default"
+          },
+          "am,i,in,interested": {
+            "intent": "select_item",
+            "domain": "default"
+          },
+          "am,buying,i": {
+            "intent": "select_item",
+            "domain": "default"
+          },
+          "buy,i,like,to,would": {
+            "intent": "select_item",
+            "domain": "default"
+          },
+          "do,have,products,what,you": {
+            "intent": "inquiry",
+            "domain": "default"
+          },
+          "do,have,item,what,you": {
+            "intent": "inquiry",
+            "domain": "default"
+          },
+          "available,is,product,which": {
+            "intent": "inquiry",
+            "domain": "default"
+          },
+          "can,get,i,what": {
+            "intent": "inquiry",
+            "domain": "default"
+          },
+          "all,items,list": {
+            "intent": "inquiry",
+            "domain": "default"
+          },
+          "available,is,what": {
+            "intent": "inquiry",
+            "domain": "default"
+          },
+          "for,helping,out,thank,you": {
+            "intent": "end_conversation",
+            "domain": "default"
+          },
+          "thanks": {
+            "intent": "end_conversation",
+            "domain": "default"
+          },
+          "later": {
+            "intent": "end_conversation",
+            "domain": "default"
+          },
+          "alright,next,time": {
+            "intent": "end_conversation",
+            "domain": "default"
+          },
+          "found,have,i,the,vendor": {
+            "intent": "end_conversation",
+            "domain": "default"
+          },
+          "hello": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "hi": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "hey": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "good,morning": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "afternoon,good": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "evening,good": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "day,good": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "howdy": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "hi,there": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "s,up,what": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "are,how,you": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "going,how,it,s": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "greetings": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "meet,nice,to,you": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "meet,pleasure,to,you": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "hey,there": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "good,see,to,you": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "are,how,things": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "going,on,s,what": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "yo": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "how,life,s": {
+            "intent": "greeting",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "inquire_price": "default",
+          "select_item": "default",
+          "inquiry": "default",
+          "end_conversation": "default",
+          "greeting": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "how much is a ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to buy a ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to buy ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "can i get a ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "can you tell me the cost of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me the cost of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "price for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much does  cost",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's the price for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "can you give me the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much do you charge for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much would I pay for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is the cost of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "give me the price for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what do you sell  for",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need to know the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "quote me the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I would like the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "Yes I want this ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I would like to order the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "please give me the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "give me ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "send ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "Do you have ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "can I get the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "order  for me",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I'll take the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "reserve  for me",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "get me ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "can you provide ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "bring me the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "i am interested in ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I am buying ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I would like to buy ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "can I get a ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "What products do you have?",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "What item do you have",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "which product is available",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "what can I get",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "list all items",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is available",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "Thank you for helping out",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Thanks",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Later",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Alright, next time",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "I have found the vendor",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good morning",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good afternoon",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good evening",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good day",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "howdy",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi there",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's up",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how are you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how's it going",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "greetings",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "nice to meet you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "pleasure to meet you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey there",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good to see you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how are things",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's going on",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "yo",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how's life",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much is a ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to buy a ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to buy ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "can i get a ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "can you tell me the cost of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me the cost of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "price for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much does  cost",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's the price for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "can you give me the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much do you charge for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much would I pay for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is the cost of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "give me the price for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what do you sell  for",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need to know the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "quote me the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I would like the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "Yes I want this ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I would like to order the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "please give me the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "give me ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "send ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "Do you have ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "can I get the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "order  for me",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I'll take the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "reserve  for me",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "get me ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "can you provide ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "bring me the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "i am interested in ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I am buying ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I would like to buy ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "can I get a ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "What products do you have?",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "What item do you have",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "which product is available",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "what can I get",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "list all items",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is available",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "Thank you for helping out",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Thanks",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Later",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Alright, next time",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "I have found the vendor",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good morning",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good afternoon",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good evening",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good day",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "howdy",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi there",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's up",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how are you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how's it going",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "greetings",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "nice to meet you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "pleasure to meet you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey there",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good to see you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how are things",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's going on",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "yo",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how's life",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much is a ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to buy a ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to buy ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "can i get a ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "can you tell me the cost of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me the cost of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "price for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much does  cost",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's the price for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "can you give me the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much do you charge for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much would I pay for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is the cost of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "give me the price for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what do you sell  for",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need to know the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "quote me the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I would like the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "Yes I want this ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I would like to order the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "please give me the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "give me ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "send ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "Do you have ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "can I get the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "order  for me",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I'll take the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "reserve  for me",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "get me ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "can you provide ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "bring me the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "i am interested in ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I am buying ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I would like to buy ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "can I get a ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "What products do you have?",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "What item do you have",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "which product is available",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "what can I get",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "list all items",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is available",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "Thank you for helping out",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Thanks",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Later",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Alright, next time",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "I have found the vendor",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good morning",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good afternoon",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good evening",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good day",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "howdy",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi there",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's up",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how are you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how's it going",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "greetings",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "nice to meet you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "pleasure to meet you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey there",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good to see you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how are things",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's going on",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "yo",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how's life",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much is a ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to buy a ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to buy ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "can i get a ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "can you tell me the cost of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me the cost of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "price for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much does  cost",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's the price for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "can you give me the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much do you charge for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much would I pay for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is the cost of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "give me the price for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what do you sell  for",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need to know the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "quote me the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I would like the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "Yes I want this ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I would like to order the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "please give me the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "give me ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "send ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "Do you have ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "can I get the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "order  for me",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I'll take the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "reserve  for me",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "get me ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "can you provide ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "bring me the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "i am interested in ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I am buying ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I would like to buy ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "can I get a ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "What products do you have?",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "What item do you have",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "which product is available",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "what can I get",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "list all items",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is available",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "Thank you for helping out",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Thanks",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Later",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Alright, next time",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "I have found the vendor",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good morning",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good afternoon",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good evening",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good day",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "howdy",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi there",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's up",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how are you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how's it going",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "greetings",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "nice to meet you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "pleasure to meet you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey there",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good to see you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how are things",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's going on",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "yo",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how's life",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much is a ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to buy a ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to buy ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "can i get a ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "can you tell me the cost of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me the cost of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "price for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much does  cost",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's the price for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "can you give me the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much do you charge for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much would I pay for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is the cost of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "give me the price for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what do you sell  for",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need to know the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "quote me the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I would like the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "Yes I want this ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I would like to order the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "please give me the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "give me ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "send ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "Do you have ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "can I get the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "order  for me",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I'll take the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "reserve  for me",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "get me ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "can you provide ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "bring me the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "i am interested in ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I am buying ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I would like to buy ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "can I get a ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "What products do you have?",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "What item do you have",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "which product is available",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "what can I get",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "list all items",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is available",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "Thank you for helping out",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Thanks",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Later",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Alright, next time",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "I have found the vendor",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good morning",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good afternoon",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good evening",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good day",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "howdy",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi there",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's up",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how are you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how's it going",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "greetings",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "nice to meet you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "pleasure to meet you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey there",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good to see you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how are things",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's going on",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "yo",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how's life",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much is a ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to buy a ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to buy ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "can i get a ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "can you tell me the cost of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me the cost of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "price for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much does  cost",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's the price for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "can you give me the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much do you charge for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much would I pay for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is the cost of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "give me the price for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what do you sell  for",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need to know the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "quote me the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I would like the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "Yes I want this ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I would like to order the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "please give me the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "give me ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "send ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "Do you have ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "can I get the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "order  for me",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I'll take the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "reserve  for me",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "get me ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "can you provide ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "bring me the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "i am interested in ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I am buying ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I would like to buy ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "can I get a ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "What products do you have?",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "What item do you have",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "which product is available",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "what can I get",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "list all items",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is available",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "Thank you for helping out",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Thanks",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Later",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Alright, next time",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "I have found the vendor",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good morning",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good afternoon",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good evening",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good day",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "howdy",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi there",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's up",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how are you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how's it going",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "greetings",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "nice to meet you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "pleasure to meet you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey there",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good to see you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how are things",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's going on",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "yo",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how's life",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much is a ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to buy a ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want to buy ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "can i get a ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "can you tell me the cost of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me the cost of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "price for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much does  cost",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's the price for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "can you give me the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much do you charge for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "how much would I pay for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is the cost of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "give me the price for ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "what do you sell  for",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need to know the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "quote me the price of ",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I would like the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "Yes I want this ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I would like to order the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "please give me the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "give me ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "send ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "Do you have ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "can I get the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "order  for me",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I'll take the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "reserve  for me",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "get me ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "can you provide ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "bring me the ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "i am interested in ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I am buying ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I would like to buy ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "can I get a ",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "What products do you have?",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "What item do you have",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "which product is available",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "what can I get",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "list all items",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "what is available",
+            "intent": "inquiry"
+          },
+          {
+            "domain": "default",
+            "utterance": "Thank you for helping out",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Thanks",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Later",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Alright, next time",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "I have found the vendor",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good morning",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good afternoon",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good evening",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good day",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "howdy",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi there",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's up",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how are you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how's it going",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "greetings",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "nice to meet you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "pleasure to meet you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hey there",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good to see you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how are things",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's going on",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "yo",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how's life",
+            "intent": "greeting"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "how": 1,
+              "much": 1,
+              "is": 1,
+              "a": 1,
+              "i": 1,
+              "want": 1,
+              "to": 1,
+              "buy": 1,
+              "can": 1,
+              "get": 1,
+              "what": 1,
+              "the": 1,
+              "price": 1,
+              "of": 1,
+              "you": 1,
+              "tell": 1,
+              "me": 1,
+              "cost": 1,
+              "for": 1,
+              "does": 1,
+              "s": 1,
+              "give": 1,
+              "do": 1,
+              "charge": 1,
+              "would": 1,
+              "pay": 1,
+              "sell": 1,
+              "need": 1,
+              "know": 1,
+              "quote": 1,
+              "like": 1,
+              "yes": 1,
+              "this": 1,
+              "order": 1,
+              "please": 1,
+              "send": 1,
+              "have": 1,
+              "ll": 1,
+              "take": 1,
+              "reserve": 1,
+              "provide": 1,
+              "bring": 1,
+              "am": 1,
+              "interested": 1,
+              "in": 1,
+              "buying": 1,
+              "products": 1,
+              "item": 1,
+              "which": 1,
+              "product": 1,
+              "available": 1,
+              "list": 1,
+              "all": 1,
+              "items": 1,
+              "thank": 1,
+              "helping": 1,
+              "out": 1,
+              "thanks": 1,
+              "later": 1,
+              "alright": 1,
+              "next": 1,
+              "time": 1,
+              "found": 1,
+              "vendor": 1,
+              "hello": 1,
+              "hi": 1,
+              "hey": 1,
+              "good": 1,
+              "morning": 1,
+              "afternoon": 1,
+              "evening": 1,
+              "day": 1,
+              "howdy": 1,
+              "there": 1,
+              "up": 1,
+              "are": 1,
+              "it": 1,
+              "going": 1,
+              "greetings": 1,
+              "nice": 1,
+              "meet": 1,
+              "pleasure": 1,
+              "see": 1,
+              "things": 1,
+              "on": 1,
+              "yo": 1,
+              "life": 1
+            },
+            "intents": {
+              "inquire_price": 1,
+              "select_item": 1,
+              "inquiry": 1,
+              "end_conversation": 1,
+              "greeting": 1
+            },
+            "intentFeatures": {
+              "inquire_price": {
+                "how": 1,
+                "much": 1,
+                "is": 1,
+                "a": 1,
+                "i": 1,
+                "want": 1,
+                "to": 1,
+                "buy": 1,
+                "can": 1,
+                "get": 1,
+                "what": 1,
+                "the": 1,
+                "price": 1,
+                "of": 1,
+                "you": 1,
+                "tell": 1,
+                "me": 1,
+                "cost": 1,
+                "for": 1,
+                "does": 1,
+                "s": 1,
+                "give": 1,
+                "do": 1,
+                "charge": 1,
+                "would": 1,
+                "pay": 1,
+                "sell": 1,
+                "need": 1,
+                "know": 1,
+                "quote": 1
+              },
+              "select_item": {
+                "i": 1,
+                "want": 1,
+                "the": 1,
+                "would": 1,
+                "like": 1,
+                "yes": 1,
+                "this": 1,
+                "to": 1,
+                "order": 1,
+                "please": 1,
+                "give": 1,
+                "me": 1,
+                "need": 1,
+                "send": 1,
+                "do": 1,
+                "you": 1,
+                "have": 1,
+                "can": 1,
+                "get": 1,
+                "for": 1,
+                "ll": 1,
+                "take": 1,
+                "reserve": 1,
+                "provide": 1,
+                "bring": 1,
+                "am": 1,
+                "interested": 1,
+                "in": 1,
+                "buying": 1,
+                "buy": 1,
+                "a": 1
+              },
+              "inquiry": {
+                "what": 1,
+                "products": 1,
+                "do": 1,
+                "you": 1,
+                "have": 1,
+                "item": 1,
+                "which": 1,
+                "product": 1,
+                "is": 1,
+                "available": 1,
+                "can": 1,
+                "i": 1,
+                "get": 1,
+                "list": 1,
+                "all": 1,
+                "items": 1
+              },
+              "end_conversation": {
+                "thank": 1,
+                "you": 1,
+                "for": 1,
+                "helping": 1,
+                "out": 1,
+                "thanks": 1,
+                "later": 1,
+                "alright": 1,
+                "next": 1,
+                "time": 1,
+                "i": 1,
+                "have": 1,
+                "found": 1,
+                "the": 1,
+                "vendor": 1
+              },
+              "greeting": {
+                "hello": 1,
+                "hi": 1,
+                "hey": 1,
+                "good": 1,
+                "morning": 1,
+                "afternoon": 1,
+                "evening": 1,
+                "day": 1,
+                "howdy": 1,
+                "there": 1,
+                "what": 1,
+                "s": 1,
+                "up": 1,
+                "how": 1,
+                "are": 1,
+                "you": 1,
+                "it": 1,
+                "going": 1,
+                "greetings": 1,
+                "nice": 1,
+                "to": 1,
+                "meet": 1,
+                "pleasure": 1,
+                "see": 1,
+                "things": 1,
+                "on": 1,
+                "yo": 1,
+                "life": 1
+              }
+            },
+            "featuresToIntent": {
+              "how": [
+                "inquire_price",
+                "greeting"
+              ],
+              "much": [
+                "inquire_price"
+              ],
+              "is": [
+                "inquire_price",
+                "inquiry"
+              ],
+              "a": [
+                "inquire_price",
+                "select_item"
+              ],
+              "i": [
+                "inquire_price",
+                "select_item",
+                "inquiry",
+                "end_conversation"
+              ],
+              "want": [
+                "inquire_price",
+                "select_item"
+              ],
+              "to": [
+                "inquire_price",
+                "select_item",
+                "greeting"
+              ],
+              "buy": [
+                "inquire_price",
+                "select_item"
+              ],
+              "can": [
+                "inquire_price",
+                "select_item",
+                "inquiry"
+              ],
+              "get": [
+                "inquire_price",
+                "select_item",
+                "inquiry"
+              ],
+              "what": [
+                "inquire_price",
+                "inquiry",
+                "greeting"
+              ],
+              "the": [
+                "inquire_price",
+                "select_item",
+                "end_conversation"
+              ],
+              "price": [
+                "inquire_price"
+              ],
+              "of": [
+                "inquire_price"
+              ],
+              "you": [
+                "inquire_price",
+                "select_item",
+                "inquiry",
+                "end_conversation",
+                "greeting"
+              ],
+              "tell": [
+                "inquire_price"
+              ],
+              "me": [
+                "inquire_price",
+                "select_item"
+              ],
+              "cost": [
+                "inquire_price"
+              ],
+              "for": [
+                "inquire_price",
+                "select_item",
+                "end_conversation"
+              ],
+              "does": [
+                "inquire_price"
+              ],
+              "s": [
+                "inquire_price",
+                "greeting"
+              ],
+              "give": [
+                "inquire_price",
+                "select_item"
+              ],
+              "do": [
+                "inquire_price",
+                "select_item",
+                "inquiry"
+              ],
+              "charge": [
+                "inquire_price"
+              ],
+              "would": [
+                "inquire_price",
+                "select_item"
+              ],
+              "pay": [
+                "inquire_price"
+              ],
+              "sell": [
+                "inquire_price"
+              ],
+              "need": [
+                "inquire_price",
+                "select_item"
+              ],
+              "know": [
+                "inquire_price"
+              ],
+              "quote": [
+                "inquire_price"
+              ],
+              "like": [
+                "select_item"
+              ],
+              "yes": [
+                "select_item"
+              ],
+              "this": [
+                "select_item"
+              ],
+              "order": [
+                "select_item"
+              ],
+              "please": [
+                "select_item"
+              ],
+              "send": [
+                "select_item"
+              ],
+              "have": [
+                "select_item",
+                "inquiry",
+                "end_conversation"
+              ],
+              "ll": [
+                "select_item"
+              ],
+              "take": [
+                "select_item"
+              ],
+              "reserve": [
+                "select_item"
+              ],
+              "provide": [
+                "select_item"
+              ],
+              "bring": [
+                "select_item"
+              ],
+              "am": [
+                "select_item"
+              ],
+              "interested": [
+                "select_item"
+              ],
+              "in": [
+                "select_item"
+              ],
+              "buying": [
+                "select_item"
+              ],
+              "products": [
+                "inquiry"
+              ],
+              "item": [
+                "inquiry"
+              ],
+              "which": [
+                "inquiry"
+              ],
+              "product": [
+                "inquiry"
+              ],
+              "available": [
+                "inquiry"
+              ],
+              "list": [
+                "inquiry"
+              ],
+              "all": [
+                "inquiry"
+              ],
+              "items": [
+                "inquiry"
+              ],
+              "thank": [
+                "end_conversation"
+              ],
+              "helping": [
+                "end_conversation"
+              ],
+              "out": [
+                "end_conversation"
+              ],
+              "thanks": [
+                "end_conversation"
+              ],
+              "later": [
+                "end_conversation"
+              ],
+              "alright": [
+                "end_conversation"
+              ],
+              "next": [
+                "end_conversation"
+              ],
+              "time": [
+                "end_conversation"
+              ],
+              "found": [
+                "end_conversation"
+              ],
+              "vendor": [
+                "end_conversation"
+              ],
+              "hello": [
+                "greeting"
+              ],
+              "hi": [
+                "greeting"
+              ],
+              "hey": [
+                "greeting"
+              ],
+              "good": [
+                "greeting"
+              ],
+              "morning": [
+                "greeting"
+              ],
+              "afternoon": [
+                "greeting"
+              ],
+              "evening": [
+                "greeting"
+              ],
+              "day": [
+                "greeting"
+              ],
+              "howdy": [
+                "greeting"
+              ],
+              "there": [
+                "greeting"
+              ],
+              "up": [
+                "greeting"
+              ],
+              "are": [
+                "greeting"
+              ],
+              "it": [
+                "greeting"
+              ],
+              "going": [
+                "greeting"
+              ],
+              "greetings": [
+                "greeting"
+              ],
+              "nice": [
+                "greeting"
+              ],
+              "meet": [
+                "greeting"
+              ],
+              "pleasure": [
+                "greeting"
+              ],
+              "see": [
+                "greeting"
+              ],
+              "things": [
+                "greeting"
+              ],
+              "on": [
+                "greeting"
+              ],
+              "yo": [
+                "greeting"
+              ],
+              "life": [
+                "greeting"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "how",
+                "much",
+                "is",
+                "a",
+                "i",
+                "want",
+                "to",
+                "buy",
+                "can",
+                "get",
+                "what",
+                "the",
+                "price",
+                "of",
+                "you",
+                "tell",
+                "me",
+                "cost",
+                "for",
+                "does",
+                "s",
+                "give",
+                "do",
+                "charge",
+                "would",
+                "pay",
+                "sell",
+                "need",
+                "know",
+                "quote",
+                "like",
+                "yes",
+                "this",
+                "order",
+                "please",
+                "send",
+                "have",
+                "ll",
+                "take",
+                "reserve",
+                "provide",
+                "bring",
+                "am",
+                "interested",
+                "in",
+                "buying",
+                "products",
+                "item",
+                "which",
+                "product",
+                "available",
+                "list",
+                "all",
+                "items",
+                "thank",
+                "helping",
+                "out",
+                "thanks",
+                "later",
+                "alright",
+                "next",
+                "time",
+                "found",
+                "vendor",
+                "hello",
+                "hi",
+                "hey",
+                "good",
+                "morning",
+                "afternoon",
+                "evening",
+                "day",
+                "howdy",
+                "there",
+                "up",
+                "are",
+                "it",
+                "going",
+                "greetings",
+                "nice",
+                "meet",
+                "pleasure",
+                "see",
+                "things",
+                "on",
+                "yo",
+                "life"
+              ],
+              "intents": [
+                "inquire_price",
+                "select_item",
+                "inquiry",
+                "end_conversation",
+                "greeting"
+              ],
+              "perceptrons": [
+                [
+                  1.5040874481201172,
+                  6.75363826751709,
+                  3.235419511795044,
+                  3.968312978744507,
+                  -1.167327642440796,
+                  1.6998347043991089,
+                  4.8160200119018555,
+                  8.549601554870605,
+                  1.9471687078475952,
+                  2.0091280937194824,
+                  -1.3130297660827637,
+                  -2.1097638607025146,
+                  8.147438049316406,
+                  7.322631359100342,
+                  -1.8161499500274658,
+                  3.228505849838257,
+                  -1.3765002489089966,
+                  8.035750389099121,
+                  7.734119415283203,
+                  -1.0124820470809937,
+                  2.5028038024902344,
+                  2.6477577686309814,
+                  3.20756196975708,
+                  -2.0780375003814697,
+                  -3.7967634201049805,
+                  4.050965309143066,
+                  7.322931289672852,
+                  -1.2964966297149658,
+                  -0.8337076306343079,
+                  3.1493492126464844,
+                  -7.846243381500244,
+                  -0.9696583151817322,
+                  -0.9696583151817322,
+                  -5.344720840454102,
+                  -0.6329455375671387,
+                  -0.5549078583717346,
+                  -2.0347304344177246,
+                  -0.11519458144903183,
+                  -0.11519458144903183,
+                  -5.340849876403809,
+                  -1.116564393043518,
+                  -0.07225312292575836,
+                  -0.09703987836837769,
+                  -0.04225960746407509,
+                  -0.04225960746407509,
+                  -0.03563391789793968,
+                  -0.6746503114700317,
+                  -0.6358827948570251,
+                  -0.3807952404022217,
+                  -0.3807952404022217,
+                  -1.6046513319015503,
+                  -0.08125291764736176,
+                  -0.08125291764736176,
+                  -0.08125291764736176,
+                  -1.5601272583007812,
+                  -1.5601272583007812,
+                  -1.5601272583007812,
+                  -0.03939662128686905,
+                  -0.037831149995326996,
+                  -0.026986464858055115,
+                  -0.026986464858055115,
+                  -0.026986464858055115,
+                  0,
+                  0,
+                  -0.034962255507707596,
+                  -0.05345199629664421,
+                  -0.03229159861803055,
+                  -0.9738067984580994,
+                  -0.019810574129223824,
+                  -0.017388470470905304,
+                  -0.015157806687057018,
+                  -0.013156472705304623,
+                  -0.02783043682575226,
+                  -0.017819834873080254,
+                  -0.4780082404613495,
+                  -1.3911243677139282,
+                  -1.255446434020996,
+                  -1.3765950202941895,
+                  0,
+                  -0.6169955134391785,
+                  -1.2324503660202026,
+                  -0.61268150806427,
+                  -0.8780596852302551,
+                  -0.5234995484352112,
+                  -0.09766080230474472,
+                  0,
+                  -2.574394702911377,
+                  -1.3407593102107165
+                ],
+                [
+                  -5.9772443771362305,
+                  -3.9610531330108643,
+                  -1.3165528774261475,
+                  -9.60027027130127,
+                  9.754532814025879,
+                  1.3242782354354858,
+                  -7.259130954742432,
+                  -2.6442902088165283,
+                  2.9909958839416504,
+                  1.9219770431518555,
+                  -17.33858871459961,
+                  -2.274733543395996,
+                  -10.601527214050293,
+                  -7.695267677307129,
+                  2.8048300743103027,
+                  -4.512853145599365,
+                  10.077868461608887,
+                  -4.512853145599365,
+                  -2.249539613723755,
+                  0,
+                  -0.3958897590637207,
+                  1.5206959247589111,
+                  6.91540002822876,
+                  -1.1292719841003418,
+                  2.9075093269348145,
+                  -2.779531478881836,
+                  0,
+                  4.817916393280029,
+                  -0.046369168907403946,
+                  -0.11761937290430069,
+                  5.6785197257995605,
+                  0.5851559042930603,
+                  0.5851559042930603,
+                  3.6535604000091553,
+                  2.0634572505950928,
+                  11.501105308532715,
+                  1.757790207862854,
+                  2.4049346446990967,
+                  2.4049346446990967,
+                  3.6246113777160645,
+                  6.114973545074463,
+                  3.5688748359680176,
+                  1.5282536745071411,
+                  0.5035093426704407,
+                  0.5035093426704407,
+                  1.0267844200134277,
+                  -2.0385217666625977,
+                  -2.0461182594299316,
+                  -0.9424599409103394,
+                  -0.9424599409103394,
+                  -1.158123254776001,
+                  -1.3129802942276,
+                  -1.3129802942276,
+                  -1.3129802942276,
+                  -1.5536452531814575,
+                  -1.5536452531814575,
+                  -1.5536452531814575,
+                  -3.303166627883911,
+                  -3.3030316829681396,
+                  -1.2237435579299927,
+                  -1.2237435579299927,
+                  -1.2237435579299927,
+                  -6.287210464477539,
+                  -6.287210464477539,
+                  -3.3028924465179443,
+                  -3.3027572631835938,
+                  -3.302621364593506,
+                  -2.747386932373047,
+                  -0.7208716869354248,
+                  -0.6760505437850952,
+                  -0.6384321451187134,
+                  -0.6038674116134644,
+                  -3.302485942840576,
+                  -1.1374059915542603,
+                  -0.007927936501801014,
+                  -1.637815237045288,
+                  -0.20742422342300415,
+                  -0.20742422342300415,
+                  -3.3023500442504883,
+                  -0.5032647252082825,
+                  -1.0129523277282715,
+                  -0.5035322904586792,
+                  -0.04049835726618767,
+                  -0.13176396489143372,
+                  0,
+                  -3.302213668823242,
+                  -0.08335819840431213,
+                  3.305213290016681
+                ],
+                [
+                  -1.0450290441513062,
+                  -0.5676631331443787,
+                  1.592998743057251,
+                  -5.123210906982422,
+                  1.6838737726211548,
+                  -0.5139686465263367,
+                  -0.8222432732582092,
+                  -0.16523054242134094,
+                  2.6183292865753174,
+                  2.3308308124542236,
+                  9.162454605102539,
+                  -5.123137950897217,
+                  -1.6920104026794434,
+                  -3.1555521488189697,
+                  -1.6152759790420532,
+                  -0.038796838372945786,
+                  -0.9198620319366455,
+                  -1.5647475719451904,
+                  -3.6556785106658936,
+                  0,
+                  -4.64893913269043,
+                  0,
+                  0.38348913192749023,
+                  -0.1745041310787201,
+                  0,
+                  0,
+                  -2.85890793800354,
+                  0,
+                  0,
+                  0,
+                  0,
+                  -0.09446623176336288,
+                  -0.09446623176336288,
+                  0,
+                  0,
+                  0,
+                  2.7423579692840576,
+                  0,
+                  0,
+                  0,
+                  -0.46045446395874023,
+                  0,
+                  -0.2201595902442932,
+                  -0.09775708615779877,
+                  -0.09775708615779877,
+                  -0.11689566820859909,
+                  5.122330188751221,
+                  5.12227725982666,
+                  4.5808868408203125,
+                  4.5808868408203125,
+                  5.040494441986084,
+                  5.265167236328125,
+                  5.265167236328125,
+                  5.265167236328125,
+                  -0.2921488285064697,
+                  -0.2921488285064697,
+                  -0.2921488285064697,
+                  -0.45669129490852356,
+                  -0.4401068687438965,
+                  -0.2845700681209564,
+                  -0.2845700681209564,
+                  -0.2845700681209564,
+                  -0.6861667633056641,
+                  -0.6861667633056641,
+                  -0.3868929445743561,
+                  -0.5438699126243591,
+                  -0.44855812191963196,
+                  -0.8579727411270142,
+                  -0.14909568428993225,
+                  -0.13483813405036926,
+                  -0.14900349080562592,
+                  -0.1304459124803543,
+                  -0.3437153100967407,
+                  -0.2934662699699402,
+                  -3.0036628246307373,
+                  -0.3265362083911896,
+                  -0.03948291018605232,
+                  -1.5413168668746948,
+                  -0.26176947355270386,
+                  -0.23727929592132568,
+                  -0.5004223585128784,
+                  -0.19501398503780365,
+                  -0.0765509307384491,
+                  -0.02591320127248764,
+                  -1.4623509645462036,
+                  -0.1894574761390686,
+                  0,
+                  -1.5098437556094386
+                ],
+                [
+                  -1.3578567504882812,
+                  -0.44869986176490784,
+                  -0.7222316265106201,
+                  -0.5636578798294067,
+                  -0.7529707551002502,
+                  -1.5270816087722778,
+                  -1.2096729278564453,
+                  -0.28942739963531494,
+                  -1.0362287759780884,
+                  -0.5570618510246277,
+                  -1.4412181377410889,
+                  0.13824382424354553,
+                  -2.566300392150879,
+                  -0.7657230496406555,
+                  -0.8206989169120789,
+                  -0.274580717086792,
+                  -2.100789785385132,
+                  -0.386362761259079,
+                  0.47182685136795044,
+                  -0.02792784385383129,
+                  -0.7520588636398315,
+                  -0.5710040926933289,
+                  -3.4269802570343018,
+                  -0.08445394784212112,
+                  -0.9370920062065125,
+                  -0.21459051966667175,
+                  -0.12838682532310486,
+                  -1.4797565937042236,
+                  -0.09802836179733276,
+                  -0.013928999193012714,
+                  -0.695829451084137,
+                  -0.10785608738660812,
+                  -0.10785608738660812,
+                  -0.6108907461166382,
+                  -0.19931168854236603,
+                  -2.0944719314575195,
+                  2.153205633163452,
+                  -0.7398734092712402,
+                  -0.7398734092712402,
+                  -0.5181198716163635,
+                  -0.33898454904556274,
+                  -0.13192777335643768,
+                  -0.8136484622955322,
+                  -0.28362709283828735,
+                  -0.28362709283828735,
+                  -0.5278548002243042,
+                  -0.3305376172065735,
+                  -0.2468867152929306,
+                  -0.4574142098426819,
+                  -0.4574142098426819,
+                  -0.4574142098426819,
+                  -0.6981580257415771,
+                  -0.6981580257415771,
+                  -0.6981580257415771,
+                  4.180037021636963,
+                  4.180037021636963,
+                  4.180037021636963,
+                  12.19123649597168,
+                  12.191235542297363,
+                  4.063745975494385,
+                  4.063745975494385,
+                  4.063745975494385,
+                  5.326379776000977,
+                  5.326379776000977,
+                  -2.0945398807525635,
+                  -2.0945475101470947,
+                  -2.094482421875,
+                  -1.7623540163040161,
+                  -0.4562675654888153,
+                  -0.4329681992530823,
+                  -0.3910296559333801,
+                  -0.36155784130096436,
+                  -2.0944740772247314,
+                  -0.7787456512451172,
+                  -0.25620996952056885,
+                  -0.6240684390068054,
+                  -0.15356647968292236,
+                  -0.26211604475975037,
+                  -2.0944736003875732,
+                  -0.3312378525733948,
+                  -0.6504713296890259,
+                  -0.2895315885543823,
+                  -0.018322400748729706,
+                  -0.20903250575065613,
+                  -0.08077628165483475,
+                  -2.0944736003875732,
+                  -0.07254251092672348,
+                  2.094474705065278
+                ],
+                [
+                  1.928284764289856,
+                  -4.175971984863281,
+                  -4.370044708251953,
+                  -2.630152463912964,
+                  -4.938920497894287,
+                  -2.493070363998413,
+                  1.451988935470581,
+                  -2.1204819679260254,
+                  -4.100928783416748,
+                  -2.030548334121704,
+                  -0.04795502498745918,
+                  -3.1800849437713623,
+                  -3.868723154067993,
+                  -2.928797483444214,
+                  0.2074771225452423,
+                  -0.7094601392745972,
+                  -4.764471054077148,
+                  -2.706045389175415,
+                  -4.486608028411865,
+                  -1.856438159942627,
+                  4.489599227905273,
+                  -2.1492366790771484,
+                  -4.250311374664307,
+                  -0.5118067860603333,
+                  -0.7305165529251099,
+                  -0.07977238297462463,
+                  -0.5903117060661316,
+                  -0.01012122817337513,
+                  0,
+                  0,
+                  -0.5709718465805054,
+                  -0.18413808941841125,
+                  -0.18413808941841125,
+                  -0.24662910401821136,
+                  -0.23934873938560486,
+                  -6.794983863830566,
+                  -2.7521278858184814,
+                  0,
+                  0,
+                  -0.06412065774202347,
+                  -2.9015002250671387,
+                  -0.01772337406873703,
+                  -1.1718626022338867,
+                  -0.45118793845176697,
+                  -0.45118793845176697,
+                  -0.6842395067214966,
+                  -0.4647422730922699,
+                  -0.29825344681739807,
+                  -0.7483936548233032,
+                  -0.7483936548233032,
+                  -2.3770101070404053,
+                  -2.265007257461548,
+                  -2.265007257461548,
+                  -2.265007257461548,
+                  -0.8386190533638,
+                  -0.8386190533638,
+                  -0.8386190533638,
+                  -6.794946670532227,
+                  -6.794936656951904,
+                  -2.265002965927124,
+                  -2.265002965927124,
+                  -2.265002965927124,
+                  0,
+                  0,
+                  7.490785598754883,
+                  7.490069389343262,
+                  7.490065574645996,
+                  5.965627670288086,
+                  1.525008201599121,
+                  1.5250085592269897,
+                  1.5250076055526733,
+                  1.52500581741333,
+                  7.49066162109375,
+                  0.0008130355272442102,
+                  3.048990249633789,
+                  5.354547023773193,
+                  -0.30117177963256836,
+                  1.3739209175109863,
+                  7.490652084350586,
+                  1.9437315464019775,
+                  3.8874552249908447,
+                  1.9437254667282104,
+                  -0.13440333306789398,
+                  0.2080611139535904,
+                  1.675093412399292,
+                  7.4907121658325195,
+                  1.0728209018707275,
+                  6.795045079615031
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "how much is a "
+      ],
+      [
+        "en",
+        "I want to buy a "
+      ],
+      [
+        "en",
+        "I want to buy "
+      ],
+      [
+        "en",
+        "can i get a "
+      ],
+      [
+        "en",
+        "what is the price of "
+      ],
+      [
+        "en",
+        "can you tell me the cost of "
+      ],
+      [
+        "en",
+        "price of "
+      ],
+      [
+        "en",
+        "tell me the cost of "
+      ],
+      [
+        "en",
+        "price for "
+      ],
+      [
+        "en",
+        "how much does  cost"
+      ],
+      [
+        "en",
+        "what's the price for "
+      ],
+      [
+        "en",
+        "can you give me the price of "
+      ],
+      [
+        "en",
+        "how much do you charge for "
+      ],
+      [
+        "en",
+        "how much would I pay for "
+      ],
+      [
+        "en",
+        "what is the cost of "
+      ],
+      [
+        "en",
+        "give me the price for "
+      ],
+      [
+        "en",
+        "what do you sell  for"
+      ],
+      [
+        "en",
+        "I need to know the price of "
+      ],
+      [
+        "en",
+        "quote me the price of "
+      ],
+      [
+        "en",
+        "I want the "
+      ],
+      [
+        "en",
+        "I want "
+      ],
+      [
+        "en",
+        "I would like the "
+      ],
+      [
+        "en",
+        "Yes I want this "
+      ],
+      [
+        "en",
+        "I would like to order the "
+      ],
+      [
+        "en",
+        "please give me the "
+      ],
+      [
+        "en",
+        "I need the "
+      ],
+      [
+        "en",
+        "give me "
+      ],
+      [
+        "en",
+        "send "
+      ],
+      [
+        "en",
+        "Do you have "
+      ],
+      [
+        "en",
+        "can I get the "
+      ],
+      [
+        "en",
+        "order  for me"
+      ],
+      [
+        "en",
+        "I'll take the "
+      ],
+      [
+        "en",
+        "reserve  for me"
+      ],
+      [
+        "en",
+        "get me "
+      ],
+      [
+        "en",
+        "can you provide "
+      ],
+      [
+        "en",
+        "bring me the "
+      ],
+      [
+        "en",
+        "i am interested in "
+      ],
+      [
+        "en",
+        "I am buying "
+      ],
+      [
+        "en",
+        "I would like to buy "
+      ],
+      [
+        "en",
+        "can I get a "
+      ],
+      [
+        "en",
+        "What products do you have?"
+      ],
+      [
+        "en",
+        "What item do you have"
+      ],
+      [
+        "en",
+        "which product is available"
+      ],
+      [
+        "en",
+        "what can I get"
+      ],
+      [
+        "en",
+        "list all items"
+      ],
+      [
+        "en",
+        "what is available"
+      ],
+      [
+        "en",
+        "Thank you for helping out"
+      ],
+      [
+        "en",
+        "Thanks"
+      ],
+      [
+        "en",
+        "Later"
+      ],
+      [
+        "en",
+        "Alright, next time"
+      ],
+      [
+        "en",
+        "I have found the vendor"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "hey"
+      ],
+      [
+        "en",
+        "good morning"
+      ],
+      [
+        "en",
+        "good afternoon"
+      ],
+      [
+        "en",
+        "good evening"
+      ],
+      [
+        "en",
+        "good day"
+      ],
+      [
+        "en",
+        "howdy"
+      ],
+      [
+        "en",
+        "hi there"
+      ],
+      [
+        "en",
+        "what's up"
+      ],
+      [
+        "en",
+        "how are you"
+      ],
+      [
+        "en",
+        "how's it going"
+      ],
+      [
+        "en",
+        "greetings"
+      ],
+      [
+        "en",
+        "nice to meet you"
+      ],
+      [
+        "en",
+        "pleasure to meet you"
+      ],
+      [
+        "en",
+        "hey there"
+      ],
+      [
+        "en",
+        "good to see you"
+      ],
+      [
+        "en",
+        "how are things"
+      ],
+      [
+        "en",
+        "what's going on"
+      ],
+      [
+        "en",
+        "yo"
+      ],
+      [
+        "en",
+        "how's life"
+      ],
+      [
+        "en",
+        "how much is a "
+      ],
+      [
+        "en",
+        "I want to buy a "
+      ],
+      [
+        "en",
+        "I want to buy "
+      ],
+      [
+        "en",
+        "can i get a "
+      ],
+      [
+        "en",
+        "what is the price of "
+      ],
+      [
+        "en",
+        "can you tell me the cost of "
+      ],
+      [
+        "en",
+        "price of "
+      ],
+      [
+        "en",
+        "tell me the cost of "
+      ],
+      [
+        "en",
+        "price for "
+      ],
+      [
+        "en",
+        "how much does  cost"
+      ],
+      [
+        "en",
+        "what's the price for "
+      ],
+      [
+        "en",
+        "can you give me the price of "
+      ],
+      [
+        "en",
+        "how much do you charge for "
+      ],
+      [
+        "en",
+        "how much would I pay for "
+      ],
+      [
+        "en",
+        "what is the cost of "
+      ],
+      [
+        "en",
+        "give me the price for "
+      ],
+      [
+        "en",
+        "what do you sell  for"
+      ],
+      [
+        "en",
+        "I need to know the price of "
+      ],
+      [
+        "en",
+        "quote me the price of "
+      ],
+      [
+        "en",
+        "I want the "
+      ],
+      [
+        "en",
+        "I want "
+      ],
+      [
+        "en",
+        "I would like the "
+      ],
+      [
+        "en",
+        "Yes I want this "
+      ],
+      [
+        "en",
+        "I would like to order the "
+      ],
+      [
+        "en",
+        "please give me the "
+      ],
+      [
+        "en",
+        "I need the "
+      ],
+      [
+        "en",
+        "give me "
+      ],
+      [
+        "en",
+        "send "
+      ],
+      [
+        "en",
+        "Do you have "
+      ],
+      [
+        "en",
+        "can I get the "
+      ],
+      [
+        "en",
+        "order  for me"
+      ],
+      [
+        "en",
+        "I'll take the "
+      ],
+      [
+        "en",
+        "reserve  for me"
+      ],
+      [
+        "en",
+        "get me "
+      ],
+      [
+        "en",
+        "can you provide "
+      ],
+      [
+        "en",
+        "bring me the "
+      ],
+      [
+        "en",
+        "i am interested in "
+      ],
+      [
+        "en",
+        "I am buying "
+      ],
+      [
+        "en",
+        "I would like to buy "
+      ],
+      [
+        "en",
+        "can I get a "
+      ],
+      [
+        "en",
+        "What products do you have?"
+      ],
+      [
+        "en",
+        "What item do you have"
+      ],
+      [
+        "en",
+        "which product is available"
+      ],
+      [
+        "en",
+        "what can I get"
+      ],
+      [
+        "en",
+        "list all items"
+      ],
+      [
+        "en",
+        "what is available"
+      ],
+      [
+        "en",
+        "Thank you for helping out"
+      ],
+      [
+        "en",
+        "Thanks"
+      ],
+      [
+        "en",
+        "Later"
+      ],
+      [
+        "en",
+        "Alright, next time"
+      ],
+      [
+        "en",
+        "I have found the vendor"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "hey"
+      ],
+      [
+        "en",
+        "good morning"
+      ],
+      [
+        "en",
+        "good afternoon"
+      ],
+      [
+        "en",
+        "good evening"
+      ],
+      [
+        "en",
+        "good day"
+      ],
+      [
+        "en",
+        "howdy"
+      ],
+      [
+        "en",
+        "hi there"
+      ],
+      [
+        "en",
+        "what's up"
+      ],
+      [
+        "en",
+        "how are you"
+      ],
+      [
+        "en",
+        "how's it going"
+      ],
+      [
+        "en",
+        "greetings"
+      ],
+      [
+        "en",
+        "nice to meet you"
+      ],
+      [
+        "en",
+        "pleasure to meet you"
+      ],
+      [
+        "en",
+        "hey there"
+      ],
+      [
+        "en",
+        "good to see you"
+      ],
+      [
+        "en",
+        "how are things"
+      ],
+      [
+        "en",
+        "what's going on"
+      ],
+      [
+        "en",
+        "yo"
+      ],
+      [
+        "en",
+        "how's life"
+      ],
+      [
+        "en",
+        "how much is a "
+      ],
+      [
+        "en",
+        "I want to buy a "
+      ],
+      [
+        "en",
+        "I want to buy "
+      ],
+      [
+        "en",
+        "can i get a "
+      ],
+      [
+        "en",
+        "what is the price of "
+      ],
+      [
+        "en",
+        "can you tell me the cost of "
+      ],
+      [
+        "en",
+        "price of "
+      ],
+      [
+        "en",
+        "tell me the cost of "
+      ],
+      [
+        "en",
+        "price for "
+      ],
+      [
+        "en",
+        "how much does  cost"
+      ],
+      [
+        "en",
+        "what's the price for "
+      ],
+      [
+        "en",
+        "can you give me the price of "
+      ],
+      [
+        "en",
+        "how much do you charge for "
+      ],
+      [
+        "en",
+        "how much would I pay for "
+      ],
+      [
+        "en",
+        "what is the cost of "
+      ],
+      [
+        "en",
+        "give me the price for "
+      ],
+      [
+        "en",
+        "what do you sell  for"
+      ],
+      [
+        "en",
+        "I need to know the price of "
+      ],
+      [
+        "en",
+        "quote me the price of "
+      ],
+      [
+        "en",
+        "I want the "
+      ],
+      [
+        "en",
+        "I want "
+      ],
+      [
+        "en",
+        "I would like the "
+      ],
+      [
+        "en",
+        "Yes I want this "
+      ],
+      [
+        "en",
+        "I would like to order the "
+      ],
+      [
+        "en",
+        "please give me the "
+      ],
+      [
+        "en",
+        "I need the "
+      ],
+      [
+        "en",
+        "give me "
+      ],
+      [
+        "en",
+        "send "
+      ],
+      [
+        "en",
+        "Do you have "
+      ],
+      [
+        "en",
+        "can I get the "
+      ],
+      [
+        "en",
+        "order  for me"
+      ],
+      [
+        "en",
+        "I'll take the "
+      ],
+      [
+        "en",
+        "reserve  for me"
+      ],
+      [
+        "en",
+        "get me "
+      ],
+      [
+        "en",
+        "can you provide "
+      ],
+      [
+        "en",
+        "bring me the "
+      ],
+      [
+        "en",
+        "i am interested in "
+      ],
+      [
+        "en",
+        "I am buying "
+      ],
+      [
+        "en",
+        "I would like to buy "
+      ],
+      [
+        "en",
+        "can I get a "
+      ],
+      [
+        "en",
+        "What products do you have?"
+      ],
+      [
+        "en",
+        "What item do you have"
+      ],
+      [
+        "en",
+        "which product is available"
+      ],
+      [
+        "en",
+        "what can I get"
+      ],
+      [
+        "en",
+        "list all items"
+      ],
+      [
+        "en",
+        "what is available"
+      ],
+      [
+        "en",
+        "Thank you for helping out"
+      ],
+      [
+        "en",
+        "Thanks"
+      ],
+      [
+        "en",
+        "Later"
+      ],
+      [
+        "en",
+        "Alright, next time"
+      ],
+      [
+        "en",
+        "I have found the vendor"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "hey"
+      ],
+      [
+        "en",
+        "good morning"
+      ],
+      [
+        "en",
+        "good afternoon"
+      ],
+      [
+        "en",
+        "good evening"
+      ],
+      [
+        "en",
+        "good day"
+      ],
+      [
+        "en",
+        "howdy"
+      ],
+      [
+        "en",
+        "hi there"
+      ],
+      [
+        "en",
+        "what's up"
+      ],
+      [
+        "en",
+        "how are you"
+      ],
+      [
+        "en",
+        "how's it going"
+      ],
+      [
+        "en",
+        "greetings"
+      ],
+      [
+        "en",
+        "nice to meet you"
+      ],
+      [
+        "en",
+        "pleasure to meet you"
+      ],
+      [
+        "en",
+        "hey there"
+      ],
+      [
+        "en",
+        "good to see you"
+      ],
+      [
+        "en",
+        "how are things"
+      ],
+      [
+        "en",
+        "what's going on"
+      ],
+      [
+        "en",
+        "yo"
+      ],
+      [
+        "en",
+        "how's life"
+      ],
+      [
+        "en",
+        "how much is a "
+      ],
+      [
+        "en",
+        "I want to buy a "
+      ],
+      [
+        "en",
+        "I want to buy "
+      ],
+      [
+        "en",
+        "can i get a "
+      ],
+      [
+        "en",
+        "what is the price of "
+      ],
+      [
+        "en",
+        "can you tell me the cost of "
+      ],
+      [
+        "en",
+        "price of "
+      ],
+      [
+        "en",
+        "tell me the cost of "
+      ],
+      [
+        "en",
+        "price for "
+      ],
+      [
+        "en",
+        "how much does  cost"
+      ],
+      [
+        "en",
+        "what's the price for "
+      ],
+      [
+        "en",
+        "can you give me the price of "
+      ],
+      [
+        "en",
+        "how much do you charge for "
+      ],
+      [
+        "en",
+        "how much would I pay for "
+      ],
+      [
+        "en",
+        "what is the cost of "
+      ],
+      [
+        "en",
+        "give me the price for "
+      ],
+      [
+        "en",
+        "what do you sell  for"
+      ],
+      [
+        "en",
+        "I need to know the price of "
+      ],
+      [
+        "en",
+        "quote me the price of "
+      ],
+      [
+        "en",
+        "I want the "
+      ],
+      [
+        "en",
+        "I want "
+      ],
+      [
+        "en",
+        "I would like the "
+      ],
+      [
+        "en",
+        "Yes I want this "
+      ],
+      [
+        "en",
+        "I would like to order the "
+      ],
+      [
+        "en",
+        "please give me the "
+      ],
+      [
+        "en",
+        "I need the "
+      ],
+      [
+        "en",
+        "give me "
+      ],
+      [
+        "en",
+        "send "
+      ],
+      [
+        "en",
+        "Do you have "
+      ],
+      [
+        "en",
+        "can I get the "
+      ],
+      [
+        "en",
+        "order  for me"
+      ],
+      [
+        "en",
+        "I'll take the "
+      ],
+      [
+        "en",
+        "reserve  for me"
+      ],
+      [
+        "en",
+        "get me "
+      ],
+      [
+        "en",
+        "can you provide "
+      ],
+      [
+        "en",
+        "bring me the "
+      ],
+      [
+        "en",
+        "i am interested in "
+      ],
+      [
+        "en",
+        "I am buying "
+      ],
+      [
+        "en",
+        "I would like to buy "
+      ],
+      [
+        "en",
+        "can I get a "
+      ],
+      [
+        "en",
+        "What products do you have?"
+      ],
+      [
+        "en",
+        "What item do you have"
+      ],
+      [
+        "en",
+        "which product is available"
+      ],
+      [
+        "en",
+        "what can I get"
+      ],
+      [
+        "en",
+        "list all items"
+      ],
+      [
+        "en",
+        "what is available"
+      ],
+      [
+        "en",
+        "Thank you for helping out"
+      ],
+      [
+        "en",
+        "Thanks"
+      ],
+      [
+        "en",
+        "Later"
+      ],
+      [
+        "en",
+        "Alright, next time"
+      ],
+      [
+        "en",
+        "I have found the vendor"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "hey"
+      ],
+      [
+        "en",
+        "good morning"
+      ],
+      [
+        "en",
+        "good afternoon"
+      ],
+      [
+        "en",
+        "good evening"
+      ],
+      [
+        "en",
+        "good day"
+      ],
+      [
+        "en",
+        "howdy"
+      ],
+      [
+        "en",
+        "hi there"
+      ],
+      [
+        "en",
+        "what's up"
+      ],
+      [
+        "en",
+        "how are you"
+      ],
+      [
+        "en",
+        "how's it going"
+      ],
+      [
+        "en",
+        "greetings"
+      ],
+      [
+        "en",
+        "nice to meet you"
+      ],
+      [
+        "en",
+        "pleasure to meet you"
+      ],
+      [
+        "en",
+        "hey there"
+      ],
+      [
+        "en",
+        "good to see you"
+      ],
+      [
+        "en",
+        "how are things"
+      ],
+      [
+        "en",
+        "what's going on"
+      ],
+      [
+        "en",
+        "yo"
+      ],
+      [
+        "en",
+        "how's life"
+      ],
+      [
+        "en",
+        "how much is a "
+      ],
+      [
+        "en",
+        "I want to buy a "
+      ],
+      [
+        "en",
+        "I want to buy "
+      ],
+      [
+        "en",
+        "can i get a "
+      ],
+      [
+        "en",
+        "what is the price of "
+      ],
+      [
+        "en",
+        "can you tell me the cost of "
+      ],
+      [
+        "en",
+        "price of "
+      ],
+      [
+        "en",
+        "tell me the cost of "
+      ],
+      [
+        "en",
+        "price for "
+      ],
+      [
+        "en",
+        "how much does  cost"
+      ],
+      [
+        "en",
+        "what's the price for "
+      ],
+      [
+        "en",
+        "can you give me the price of "
+      ],
+      [
+        "en",
+        "how much do you charge for "
+      ],
+      [
+        "en",
+        "how much would I pay for "
+      ],
+      [
+        "en",
+        "what is the cost of "
+      ],
+      [
+        "en",
+        "give me the price for "
+      ],
+      [
+        "en",
+        "what do you sell  for"
+      ],
+      [
+        "en",
+        "I need to know the price of "
+      ],
+      [
+        "en",
+        "quote me the price of "
+      ],
+      [
+        "en",
+        "I want the "
+      ],
+      [
+        "en",
+        "I want "
+      ],
+      [
+        "en",
+        "I would like the "
+      ],
+      [
+        "en",
+        "Yes I want this "
+      ],
+      [
+        "en",
+        "I would like to order the "
+      ],
+      [
+        "en",
+        "please give me the "
+      ],
+      [
+        "en",
+        "I need the "
+      ],
+      [
+        "en",
+        "give me "
+      ],
+      [
+        "en",
+        "send "
+      ],
+      [
+        "en",
+        "Do you have "
+      ],
+      [
+        "en",
+        "can I get the "
+      ],
+      [
+        "en",
+        "order  for me"
+      ],
+      [
+        "en",
+        "I'll take the "
+      ],
+      [
+        "en",
+        "reserve  for me"
+      ],
+      [
+        "en",
+        "get me "
+      ],
+      [
+        "en",
+        "can you provide "
+      ],
+      [
+        "en",
+        "bring me the "
+      ],
+      [
+        "en",
+        "i am interested in "
+      ],
+      [
+        "en",
+        "I am buying "
+      ],
+      [
+        "en",
+        "I would like to buy "
+      ],
+      [
+        "en",
+        "can I get a "
+      ],
+      [
+        "en",
+        "What products do you have?"
+      ],
+      [
+        "en",
+        "What item do you have"
+      ],
+      [
+        "en",
+        "which product is available"
+      ],
+      [
+        "en",
+        "what can I get"
+      ],
+      [
+        "en",
+        "list all items"
+      ],
+      [
+        "en",
+        "what is available"
+      ],
+      [
+        "en",
+        "Thank you for helping out"
+      ],
+      [
+        "en",
+        "Thanks"
+      ],
+      [
+        "en",
+        "Later"
+      ],
+      [
+        "en",
+        "Alright, next time"
+      ],
+      [
+        "en",
+        "I have found the vendor"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "hey"
+      ],
+      [
+        "en",
+        "good morning"
+      ],
+      [
+        "en",
+        "good afternoon"
+      ],
+      [
+        "en",
+        "good evening"
+      ],
+      [
+        "en",
+        "good day"
+      ],
+      [
+        "en",
+        "howdy"
+      ],
+      [
+        "en",
+        "hi there"
+      ],
+      [
+        "en",
+        "what's up"
+      ],
+      [
+        "en",
+        "how are you"
+      ],
+      [
+        "en",
+        "how's it going"
+      ],
+      [
+        "en",
+        "greetings"
+      ],
+      [
+        "en",
+        "nice to meet you"
+      ],
+      [
+        "en",
+        "pleasure to meet you"
+      ],
+      [
+        "en",
+        "hey there"
+      ],
+      [
+        "en",
+        "good to see you"
+      ],
+      [
+        "en",
+        "how are things"
+      ],
+      [
+        "en",
+        "what's going on"
+      ],
+      [
+        "en",
+        "yo"
+      ],
+      [
+        "en",
+        "how's life"
+      ],
+      [
+        "en",
+        "how much is a "
+      ],
+      [
+        "en",
+        "I want to buy a "
+      ],
+      [
+        "en",
+        "I want to buy "
+      ],
+      [
+        "en",
+        "can i get a "
+      ],
+      [
+        "en",
+        "what is the price of "
+      ],
+      [
+        "en",
+        "can you tell me the cost of "
+      ],
+      [
+        "en",
+        "price of "
+      ],
+      [
+        "en",
+        "tell me the cost of "
+      ],
+      [
+        "en",
+        "price for "
+      ],
+      [
+        "en",
+        "how much does  cost"
+      ],
+      [
+        "en",
+        "what's the price for "
+      ],
+      [
+        "en",
+        "can you give me the price of "
+      ],
+      [
+        "en",
+        "how much do you charge for "
+      ],
+      [
+        "en",
+        "how much would I pay for "
+      ],
+      [
+        "en",
+        "what is the cost of "
+      ],
+      [
+        "en",
+        "give me the price for "
+      ],
+      [
+        "en",
+        "what do you sell  for"
+      ],
+      [
+        "en",
+        "I need to know the price of "
+      ],
+      [
+        "en",
+        "quote me the price of "
+      ],
+      [
+        "en",
+        "I want the "
+      ],
+      [
+        "en",
+        "I want "
+      ],
+      [
+        "en",
+        "I would like the "
+      ],
+      [
+        "en",
+        "Yes I want this "
+      ],
+      [
+        "en",
+        "I would like to order the "
+      ],
+      [
+        "en",
+        "please give me the "
+      ],
+      [
+        "en",
+        "I need the "
+      ],
+      [
+        "en",
+        "give me "
+      ],
+      [
+        "en",
+        "send "
+      ],
+      [
+        "en",
+        "Do you have "
+      ],
+      [
+        "en",
+        "can I get the "
+      ],
+      [
+        "en",
+        "order  for me"
+      ],
+      [
+        "en",
+        "I'll take the "
+      ],
+      [
+        "en",
+        "reserve  for me"
+      ],
+      [
+        "en",
+        "get me "
+      ],
+      [
+        "en",
+        "can you provide "
+      ],
+      [
+        "en",
+        "bring me the "
+      ],
+      [
+        "en",
+        "i am interested in "
+      ],
+      [
+        "en",
+        "I am buying "
+      ],
+      [
+        "en",
+        "I would like to buy "
+      ],
+      [
+        "en",
+        "can I get a "
+      ],
+      [
+        "en",
+        "What products do you have?"
+      ],
+      [
+        "en",
+        "What item do you have"
+      ],
+      [
+        "en",
+        "which product is available"
+      ],
+      [
+        "en",
+        "what can I get"
+      ],
+      [
+        "en",
+        "list all items"
+      ],
+      [
+        "en",
+        "what is available"
+      ],
+      [
+        "en",
+        "Thank you for helping out"
+      ],
+      [
+        "en",
+        "Thanks"
+      ],
+      [
+        "en",
+        "Later"
+      ],
+      [
+        "en",
+        "Alright, next time"
+      ],
+      [
+        "en",
+        "I have found the vendor"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "hey"
+      ],
+      [
+        "en",
+        "good morning"
+      ],
+      [
+        "en",
+        "good afternoon"
+      ],
+      [
+        "en",
+        "good evening"
+      ],
+      [
+        "en",
+        "good day"
+      ],
+      [
+        "en",
+        "howdy"
+      ],
+      [
+        "en",
+        "hi there"
+      ],
+      [
+        "en",
+        "what's up"
+      ],
+      [
+        "en",
+        "how are you"
+      ],
+      [
+        "en",
+        "how's it going"
+      ],
+      [
+        "en",
+        "greetings"
+      ],
+      [
+        "en",
+        "nice to meet you"
+      ],
+      [
+        "en",
+        "pleasure to meet you"
+      ],
+      [
+        "en",
+        "hey there"
+      ],
+      [
+        "en",
+        "good to see you"
+      ],
+      [
+        "en",
+        "how are things"
+      ],
+      [
+        "en",
+        "what's going on"
+      ],
+      [
+        "en",
+        "yo"
+      ],
+      [
+        "en",
+        "how's life"
+      ],
+      [
+        "en",
+        "how much is a "
+      ],
+      [
+        "en",
+        "I want to buy a "
+      ],
+      [
+        "en",
+        "I want to buy "
+      ],
+      [
+        "en",
+        "can i get a "
+      ],
+      [
+        "en",
+        "what is the price of "
+      ],
+      [
+        "en",
+        "can you tell me the cost of "
+      ],
+      [
+        "en",
+        "price of "
+      ],
+      [
+        "en",
+        "tell me the cost of "
+      ],
+      [
+        "en",
+        "price for "
+      ],
+      [
+        "en",
+        "how much does  cost"
+      ],
+      [
+        "en",
+        "what's the price for "
+      ],
+      [
+        "en",
+        "can you give me the price of "
+      ],
+      [
+        "en",
+        "how much do you charge for "
+      ],
+      [
+        "en",
+        "how much would I pay for "
+      ],
+      [
+        "en",
+        "what is the cost of "
+      ],
+      [
+        "en",
+        "give me the price for "
+      ],
+      [
+        "en",
+        "what do you sell  for"
+      ],
+      [
+        "en",
+        "I need to know the price of "
+      ],
+      [
+        "en",
+        "quote me the price of "
+      ],
+      [
+        "en",
+        "I want the "
+      ],
+      [
+        "en",
+        "I want "
+      ],
+      [
+        "en",
+        "I would like the "
+      ],
+      [
+        "en",
+        "Yes I want this "
+      ],
+      [
+        "en",
+        "I would like to order the "
+      ],
+      [
+        "en",
+        "please give me the "
+      ],
+      [
+        "en",
+        "I need the "
+      ],
+      [
+        "en",
+        "give me "
+      ],
+      [
+        "en",
+        "send "
+      ],
+      [
+        "en",
+        "Do you have "
+      ],
+      [
+        "en",
+        "can I get the "
+      ],
+      [
+        "en",
+        "order  for me"
+      ],
+      [
+        "en",
+        "I'll take the "
+      ],
+      [
+        "en",
+        "reserve  for me"
+      ],
+      [
+        "en",
+        "get me "
+      ],
+      [
+        "en",
+        "can you provide "
+      ],
+      [
+        "en",
+        "bring me the "
+      ],
+      [
+        "en",
+        "i am interested in "
+      ],
+      [
+        "en",
+        "I am buying "
+      ],
+      [
+        "en",
+        "I would like to buy "
+      ],
+      [
+        "en",
+        "can I get a "
+      ],
+      [
+        "en",
+        "What products do you have?"
+      ],
+      [
+        "en",
+        "What item do you have"
+      ],
+      [
+        "en",
+        "which product is available"
+      ],
+      [
+        "en",
+        "what can I get"
+      ],
+      [
+        "en",
+        "list all items"
+      ],
+      [
+        "en",
+        "what is available"
+      ],
+      [
+        "en",
+        "Thank you for helping out"
+      ],
+      [
+        "en",
+        "Thanks"
+      ],
+      [
+        "en",
+        "Later"
+      ],
+      [
+        "en",
+        "Alright, next time"
+      ],
+      [
+        "en",
+        "I have found the vendor"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "hey"
+      ],
+      [
+        "en",
+        "good morning"
+      ],
+      [
+        "en",
+        "good afternoon"
+      ],
+      [
+        "en",
+        "good evening"
+      ],
+      [
+        "en",
+        "good day"
+      ],
+      [
+        "en",
+        "howdy"
+      ],
+      [
+        "en",
+        "hi there"
+      ],
+      [
+        "en",
+        "what's up"
+      ],
+      [
+        "en",
+        "how are you"
+      ],
+      [
+        "en",
+        "how's it going"
+      ],
+      [
+        "en",
+        "greetings"
+      ],
+      [
+        "en",
+        "nice to meet you"
+      ],
+      [
+        "en",
+        "pleasure to meet you"
+      ],
+      [
+        "en",
+        "hey there"
+      ],
+      [
+        "en",
+        "good to see you"
+      ],
+      [
+        "en",
+        "how are things"
+      ],
+      [
+        "en",
+        "what's going on"
+      ],
+      [
+        "en",
+        "yo"
+      ],
+      [
+        "en",
+        "how's life"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "greeting": [
+          {
+            "answer": "Hello! How can I assist you today?"
+          },
+          {
+            "answer": "Hey there! What can I do for you?"
+          },
+          {
+            "answer": "Good morning! How may I help you?"
+          }
+        ],
+        "inquire_price": [
+          {
+            "answer": "What kind are you interested in?"
+          },
+          {
+            "answer": "Please specify the item you want."
+          },
+          {
+            "answer": "Can you tell me which product you're asking about?"
+          },
+          {
+            "answer": "I can help with that! Which item are you referring to?"
+          },
+          {
+            "answer": "Which specific product are you inquiring about?"
+          },
+          {
+            "answer": "Please let me know the name of the item you're interested in."
+          },
+          {
+            "answer": "Could you specify the product you're asking about?"
+          },
+          {
+            "answer": "Which item would you like the price for?"
+          },
+          {
+            "answer": "I need to know the exact product you want to check."
+          },
+          {
+            "answer": "Can you provide the name of the item you're interested in?"
+          },
+          {
+            "answer": "Please provide the name of the product you want to know the price of."
+          },
+          {
+            "answer": "Which item's price are you looking for?"
+          }
+        ],
+        "select_item": [
+          {
+            "answer": "Excellent choice! Contact the vendor for details."
+          },
+          {
+            "answer": "Got it! Reach out to the vendor for further assistance."
+          },
+          {
+            "answer": "Great pick! You can contact the vendor for more information."
+          },
+          {
+            "answer": "Awesome! Please get in touch with the vendor for details."
+          },
+          {
+            "answer": "Nice choice! The vendor will assist you with the rest."
+          },
+          {
+            "answer": "Perfect! The vendor is available for any further questions."
+          },
+          {
+            "answer": "Good choice! You can now contact the vendor to proceed."
+          },
+          {
+            "answer": "That's a great selection! The vendor will help you out from here."
+          },
+          {
+            "answer": "You've selected well! Get in touch with the vendor for more."
+          },
+          {
+            "answer": "Understood! The vendor is ready to assist you further."
+          },
+          {
+            "answer": "Great! Please contact the vendor for any additional details."
+          },
+          {
+            "answer": "Fantastic choice! The vendor will guide you with the next steps."
+          }
+        ],
+        "inquiry": [
+          {
+            "answer": "Here is a list of products we offer."
+          },
+          {
+            "answer": "We have these products available:"
+          },
+          {
+            "answer": "Take a look at our product collection."
+          }
+        ],
+        "end_conversation": [
+          {
+            "answer": "You're welcome."
+          },
+          {
+            "answer": "Bye, do shop with us again."
+          },
+          {
+            "answer": "Glad I could help."
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
