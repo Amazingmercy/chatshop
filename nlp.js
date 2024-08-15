@@ -83,6 +83,7 @@ const setupNlp = async () => {
     'Thank you for helping out',
     'Thanks',
     'Later',
+    'Thank you',
     'Alright, next time',
     'I have found the vendor',
   ];
