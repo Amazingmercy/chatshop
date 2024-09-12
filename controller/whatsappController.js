@@ -58,13 +58,11 @@ const handleProductInquiry = async (res, recipient, response) => {
     for (const productName of allProducts) {
       const product = await Product.findOne({ name: productName });
       responseMessage += `\nProduct: ${product.name}\nPrice: $${product.price}\n`;
-  
-      // If this product has an image, store the image URL (you can choose to keep only the last product's image or the first one)
-      if (product.picture_url && !imageUrl) {
-        imageUrl = `${process.env.APP_URL}/static/uploaded_img/${product.picture_url}`;
-      }
+      
+      imageUrl = `${process.env.APP_URL}/static/uploaded_img/${product.picture_url}`;
+      await sendMessage(res, recipient, responseMessage, imageUrl);
     }
-    await sendMessage(res, recipient, responseMessage, imageUrl);
+    
   }
   
 };
