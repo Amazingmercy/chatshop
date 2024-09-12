@@ -1,6 +1,5 @@
 require('dotenv').config();
 const Product = require('../models/productModel');
-const User = require('../models/userModel')
 const axios = require('axios')
 const setupNlp = require('../nlp')
 
@@ -12,7 +11,7 @@ const handleProductSelection = async (res, recipient, response) => {
 
   if (productName == null) {
     let responseMessage = 'Please select a product from the list, Sorry, we don\'t have that at the moment'
-    await sendMessage(res, recipient, responseMessage);
+    await sendTextMessage(res, recipient, responseMessage);
   }
 
   const products = await Product.find({ name: new RegExp(productName, 'i') }).populate('userId');
@@ -23,9 +22,9 @@ const handleProductSelection = async (res, recipient, response) => {
       const vendor = product.userId;
       responseMessage += `\nVendor: ${vendor.businessName}\nContact: ${vendor.whatsAppBussinessLink}\n`;
     }
-    await sendMessage(res, recipient, responseMessage);
+    await sendTextMessage(res, recipient, responseMessage);
   } else {
-    await sendMessage(res, recipient, `Sorry, we don't have ${productName} at the moment.`);
+    await sendTextMessage(res, recipient, `Sorry, we don't have ${productName} at the moment.`);
   }
 };
 
@@ -36,48 +35,48 @@ const handleProductInquiry = async (res, recipient, response) => {
   const productEntity = response.entities.find(entity => entity.entity === 'product');
   const productName = productEntity ? productEntity.option : 'products';
 
-  
   const products = await Product.find({ name: new RegExp(productName, 'i') }).populate('userId');
 
-  if (productName != 'products') {
+  if (productName !== 'products') {
     let responseMessage = response.answer + `${productName}`;
-let imageUrl = null;  // Initialize with null for cases without images
+    
+    for (const product of products) {
+      responseMessage += `\nProduct: ${product.name}\nPrice: $${product.price}\nVendor: ${product.userId.businessName}\nLink: ${product.userId.whatsAppBussinessLink}\n`;
 
-for (const product of products) {
-  responseMessage += `\nProduct: ${product.name}\nPrice: $${product.price}\nVendor: ${product.userId.businessName}\nLink: ${product.userId.whatsAppBussinessLink}\n`;
-  if (product.picture_url) {
-    imageUrl = `${process.env.APP_URL}/static/uploaded_img/${product.picture_url}`;
-  }
-}
+      // Send image first, if available
+      if (product.picture_url) {
+        const imageUrl = product.picture_url;
+        await sendImageMessage(res, recipient, imageUrl);
+      }
 
-// Send message and image after building the entire response
-await sendMessage(res, recipient, responseMessage, imageUrl);
-
+      // Send the text message after the image
+      await sendTextMessage(res, recipient, responseMessage);
+    }
   } else {
     const allProducts = await Product.distinct('name');
     let responseMessage = `Oh, we do not have that at the moment. Here are some available items:\n`;
-    let imageUrl = null; 
-  
+
     for (const productName of allProducts) {
       const product = await Product.findOne({ name: productName });
       responseMessage += `\nProduct: ${product.name}\nPrice: $${product.price}\n`;
-      
-      imageUrl = `${process.env.APP_URL}/static/uploaded/${product.picture_url}`;
-      await sendMessage(res, recipient, responseMessage, imageUrl);
+
+      if (product.picture_url) {
+        const imageUrl = product.picture_url;
+        await sendImageMessage(res, recipient, imageUrl);
+      }
+
+      await sendTextMessage(res, recipient, responseMessage);
     }
-    
   }
-  
 };
+
 
 const handleGreeting = async (res, recipient, response) => {
   try {
     const greetingMessage = response.answer;
-    console.log(response.answer)
-    await sendMessage(res, recipient, greetingMessage);
+    await sendTextMessage(res, recipient, greetingMessage);
   } catch (error) {
-    console.log('Error handling greeting:', error);
-    await sendMessage(res, recipient, 'There was an error processing your request. Please try again later.');
+    await sendTextMessage(res, recipient, 'There was an error processing your request. Please try again later.');
   }
 
 }
@@ -86,72 +85,73 @@ const handleGreeting = async (res, recipient, response) => {
 const handleEndConversation = async (res, recipient, response) => {
   try {
     const responseMessage = response.answer;
-    await sendMessage(res, recipient, responseMessage);
+    await sendTextMessage(res, recipient, responseMessage);
   } catch (error) {
-    console.log('Error handling greeting:', error);
-    await sendMessage(res, recipient, 'There was an error processing your request. Please try again later.');
+    await sendTextMessage(res, recipient, 'There was an error processing your request. Please try again later.');
   }
 
 }
 
 
 
-const sendMessage = async (res, recipient, message, imageUrl = null) => {
+const sendTextMessage = async (res, recipient, message) => {
   try {
-    // First, send the text message if it exists
       const textPayload = {
         messaging_product: 'whatsapp',
         to: recipient,
         type: "text",
         text: { body: message },  // For text messages
       };
+    
 
-      await axios.post(
-        process.env.WHATSAPP_API_URL,
-        textPayload,
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${process.env.WHATSAPP_API_TOKEN}`,
-          },
-        }
-      );
 
-    // Then, send the image if an imageUrl is provided
-    if (imageUrl) {
-      const imagePayload = {
-        messaging_product: 'whatsapp',
-        to: recipient,
-        type: "image",
-        image: { link: imageUrl },  // Image URL link
-      };
-
-      console.log(imageUrl)
-
-      await axios.post(
-        process.env.WHATSAPP_API_URL,
-        imagePayload,
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${process.env.WHATSAPP_API_TOKEN}`,
-          },
-        }
-      );
-    }
+    await axios.post(
+      process.env.WHATSAPP_API_URL,
+      textPayload,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${process.env.WHATSAPP_API_TOKEN}`,
+        },
+      }
+    );
 
   } catch (error) {
-    console.error(
-      'Error sending message:',
-      error.response && error.response.data
-        ? error.response.data
-        : error.message
-    );
+    console.log(error)
     throw new Error('Error sending message');
   }
 };
 
 
+const sendImageMessage = async (res, recipient, imageUrl) => {
+  try {
+
+    const imagePayload = {
+      messaging_product: 'whatsapp',
+      to: recipient,
+      type: "image",
+      image: { link: imageUrl },  // Image URL link
+    };
+
+    console.log(imageUrl)
+
+    await axios.post(
+      process.env.WHATSAPP_API_URL,
+      imagePayload,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${process.env.WHATSAPP_API_TOKEN}`,
+        },
+      }
+    );
+
+
+  } catch (error) {
+    console.log(error)
+    throw new Error('Error sending message');
+  }
+};
 
 
 
@@ -166,7 +166,7 @@ const handleIncomingMessage = async (req, res) => {
     const manager = await setupNlp();
     const response = await manager.process('en', incomingMessage);
     console.log(response.answer)
-    
+
     switch (response.intent) {
       case 'greeting':
         await handleGreeting(res, from, response);
@@ -188,7 +188,7 @@ const handleIncomingMessage = async (req, res) => {
   } catch (error) {
     console.log('Error handling incoming message:', error);
     res.status(500).json({ message: 'Error handling incoming message' });
-};
+  };
 }
 
 
@@ -226,6 +226,7 @@ module.exports = {
   handleProductInquiry,
   handleProductSelection,
   handleIncomingMessage,
-  sendMessage,
+  sendTextMessage,
+  sendImageMessage,
   verifyWebhook
 }

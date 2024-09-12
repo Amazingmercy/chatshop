@@ -1,19 +1,17 @@
-const multer = require('multer')
-const path = require('path')
+
+const multer = require('multer');
 
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, '../static/uploaded_img/')); 
-    },
-    filename: (req, file, cb) => {
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-    }
+
+// Set up multer to use Cloudinary for image uploads
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: 'chatshop', 
+    allowed_formats: ['jpg', 'png'],
+  },
 });
-
 
 const upload = multer({ storage: storage });
 
-
-
-module.exports = upload;
+module.exports = { cloudinary, upload };
