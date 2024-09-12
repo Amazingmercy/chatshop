@@ -41,15 +41,18 @@ const handleProductInquiry = async (res, recipient, response) => {
 
   if (productName != 'products') {
     let responseMessage = response.answer + `${productName}`;
-    for (const product of products) {
-      responseMessage += `\nProduct: ${product.name}\nPrice: $${product.price}\nVendor: ${product.userId.businessName}\n Link: ${product.userId.whatsAppBussinessLink}`;
-      if (product.picture_url) {
-        const imageUrl = `${process.env.APP_URL}/static/uploaded_img/${product.picture_url}`;
-        await sendMessage(res, recipient, responseMessage, imageUrl);
-      } else {
-        await sendMessage(res, recipient, responseMessage);
-      }
-    }
+let imageUrl = null;  // Initialize with null for cases without images
+
+for (const product of products) {
+  responseMessage += `\nProduct: ${product.name}\nPrice: $${product.price}\nVendor: ${product.userId.businessName}\nLink: ${product.userId.whatsAppBussinessLink}\n`;
+  if (product.picture_url) {
+    imageUrl = `${process.env.APP_URL}/static/uploaded_img/${product.picture_url}`;
+  }
+}
+
+// Send message and image after building the entire response
+await sendMessage(res, recipient, responseMessage, imageUrl);
+
   } else {
     const allProducts = await Product.distinct('name');
     let responseMessage = `Oh, we do not have that at the moment. Here are some available items:\n`;
@@ -59,7 +62,7 @@ const handleProductInquiry = async (res, recipient, response) => {
       const product = await Product.findOne({ name: productName });
       responseMessage += `\nProduct: ${product.name}\nPrice: $${product.price}\n`;
       
-      imageUrl = `${process.env.APP_URL}/static/uploaded_img/${product.picture_url}`;
+      imageUrl = `${process.env.APP_URL}/static/uploaded/${product.picture_url}`;
       await sendMessage(res, recipient, responseMessage, imageUrl);
     }
     
@@ -123,7 +126,7 @@ const sendMessage = async (res, recipient, message, imageUrl = null) => {
         image: { link: imageUrl },  // Image URL link
       };
 
-      console.log(imageUrl.link)
+      console.log(imageUrl)
 
       await axios.post(
         process.env.WHATSAPP_API_URL,
