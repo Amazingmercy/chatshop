@@ -38,12 +38,11 @@ const handleProductInquiry = async (res, recipient, response) => {
   const products = await Product.find({ name: new RegExp(productName, 'i') }).populate('userId');
 
   if (productName !== 'products') {
-    let responseMessage = response.answer + `${productName}`;
-    
     for (const product of products) {
-      responseMessage += `\nProduct: ${product.name}\nPrice: $${product.price}\nVendor: ${product.userId.businessName}\nLink: ${product.userId.whatsAppBussinessLink}\n`;
+      // Reset responseMessage for each product to avoid accumulating product data
+      let responseMessage = `${response.answer}\nProduct: ${product.name}\nPrice: $${product.price}\nVendor: ${product.userId.businessName}\nLink: ${product.userId.whatsAppBussinessLink}\n`;
 
-      // Send image first, if available
+      // Send the image first, if available
       if (product.picture_url) {
         const imageUrl = product.picture_url;
         await sendImageMessage(res, recipient, imageUrl);
@@ -53,12 +52,15 @@ const handleProductInquiry = async (res, recipient, response) => {
       await sendTextMessage(res, recipient, responseMessage);
     }
   } else {
+    let responseMessage = 'We do not have that right now, Here\'s what we have';
+    await sendTextMessage(res, recipient, responseMessage);
     const allProducts = await Product.distinct('name');
-    let responseMessage = `Oh, we do not have that at the moment. Here are some available items:\n`;
-
     for (const productName of allProducts) {
+      // Find each product
       const product = await Product.findOne({ name: productName });
-      responseMessage += `\nProduct: ${product.name}\nPrice: $${product.price}\n`;
+
+      // Reset responseMessage for each product to avoid accumulation
+      responseMessage = `\nProduct: ${product.name}\nPrice: $${product.price}\n`;
 
       if (product.picture_url) {
         const imageUrl = product.picture_url;
@@ -133,7 +135,6 @@ const sendImageMessage = async (res, recipient, imageUrl) => {
       image: { link: imageUrl },  // Image URL link
     };
 
-    console.log(imageUrl)
 
     await axios.post(
       process.env.WHATSAPP_API_URL,

@@ -47,6 +47,26 @@
             "intent": "greeting",
             "domain": "default"
           },
+          "good,morn": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "afternoon,good": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "even,good": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "are,how,you": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "is,up,what": {
+            "intent": "greeting",
+            "domain": "default"
+          },
           "%product%,a,buy,i,to,want": {
             "intent": "inquire_price",
             "domain": "default"
@@ -59,6 +79,26 @@
             "intent": "inquire_price",
             "domain": "default"
           },
+          "%product%,is,of,price,the,what": {
+            "intent": "inquire_price",
+            "domain": "default"
+          },
+          "%product%,how,is,much,the": {
+            "intent": "inquire_price",
+            "domain": "default"
+          },
+          "%product%,ani,do,have,in,stock,you": {
+            "intent": "inquire_price",
+            "domain": "default"
+          },
+          "%product%,avail,is,the": {
+            "intent": "inquire_price",
+            "domain": "default"
+          },
+          "are,avail,product,the,what": {
+            "intent": "inquire_price",
+            "domain": "default"
+          },
           "%product%,i,the,want": {
             "intent": "select_item",
             "domain": "default"
@@ -67,11 +107,19 @@
             "intent": "select_item",
             "domain": "default"
           },
-          "%vendor%,from,i,want": {
+          "%product%,give,me,pleas,the": {
             "intent": "select_item",
             "domain": "default"
           },
-          "%vendor%": {
+          "%product%,can,get,me,the,you": {
+            "intent": "select_item",
+            "domain": "default"
+          },
+          "%product%,i,need,the": {
+            "intent": "select_item",
+            "domain": "default"
+          },
+          "%product%,i,want": {
             "intent": "select_item",
             "domain": "default"
           },
@@ -80,6 +128,18 @@
             "domain": "default"
           },
           "thank": {
+            "intent": "end_conversation",
+            "domain": "default"
+          },
+          "all,for,is,now,that": {
+            "intent": "end_conversation",
+            "domain": "default"
+          },
+          "bye": {
+            "intent": "end_conversation",
+            "domain": "default"
+          },
+          "goodby": {
             "intent": "end_conversation",
             "domain": "default"
           }
@@ -108,6 +168,31 @@
           },
           {
             "domain": "default",
+            "utterance": "good morning",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good afternoon",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "good evening",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "how are you",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "what's up",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
             "utterance": "I want to buy a %product%",
             "intent": "inquire_price"
           },
@@ -123,6 +208,31 @@
           },
           {
             "domain": "default",
+            "utterance": "What's the price of %product%",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "How much is the %product%",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "Do you have any %product% in stock?",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "Is the %product% available?",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
+            "utterance": "What are the available products?",
+            "intent": "inquire_price"
+          },
+          {
+            "domain": "default",
             "utterance": "I want the %product%",
             "intent": "select_item"
           },
@@ -133,12 +243,22 @@
           },
           {
             "domain": "default",
-            "utterance": "I want from %vendor%",
+            "utterance": "Please give me the %product%",
             "intent": "select_item"
           },
           {
             "domain": "default",
-            "utterance": "%vendor%",
+            "utterance": "Can you get me the %product%",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I need the %product%",
+            "intent": "select_item"
+          },
+          {
+            "domain": "default",
+            "utterance": "I want %product%",
             "intent": "select_item"
           },
           {
@@ -149,6 +269,21 @@
           {
             "domain": "default",
             "utterance": "Thanks",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "That's all for now",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Bye",
+            "intent": "end_conversation"
+          },
+          {
+            "domain": "default",
+            "utterance": "Goodbye",
             "intent": "end_conversation"
           }
         ],
@@ -169,6 +304,16 @@
               "hello": 1,
               "hi": 1,
               "hey": 1,
+              "good": 1,
+              "morn": 1,
+              "afternoon": 1,
+              "even": 1,
+              "how": 1,
+              "are": 1,
+              "you": 1,
+              "what": 1,
+              "is": 1,
+              "up": 1,
               "i": 1,
               "want": 1,
               "to": 1,
@@ -179,12 +324,29 @@
               "get": 1,
               "someth": 1,
               "the": 1,
+              "price": 1,
+              "of": 1,
+              "much": 1,
+              "do": 1,
+              "have": 1,
+              "ani": 1,
+              "in": 1,
+              "stock": 1,
+              "avail": 1,
+              "product": 1,
               "would": 1,
               "like": 1,
-              "from": 1,
-              "%vendor%": 1,
+              "pleas": 1,
+              "give": 1,
+              "me": 1,
+              "need": 1,
               "thank": 1,
-              "you": 1
+              "that": 1,
+              "all": 1,
+              "for": 1,
+              "now": 1,
+              "bye": 1,
+              "goodby": 1
             },
             "intents": {
               "greeting": 1,
@@ -196,7 +358,17 @@
               "greeting": {
                 "hello": 1,
                 "hi": 1,
-                "hey": 1
+                "hey": 1,
+                "good": 1,
+                "morn": 1,
+                "afternoon": 1,
+                "even": 1,
+                "how": 1,
+                "are": 1,
+                "you": 1,
+                "what": 1,
+                "is": 1,
+                "up": 1
               },
               "inquire_price": {
                 "i": 1,
@@ -207,7 +379,23 @@
                 "%product%": 1,
                 "can": 1,
                 "get": 1,
-                "someth": 1
+                "someth": 1,
+                "what": 1,
+                "is": 1,
+                "the": 1,
+                "price": 1,
+                "of": 1,
+                "how": 1,
+                "much": 1,
+                "do": 1,
+                "you": 1,
+                "have": 1,
+                "ani": 1,
+                "in": 1,
+                "stock": 1,
+                "avail": 1,
+                "are": 1,
+                "product": 1
               },
               "select_item": {
                 "i": 1,
@@ -216,12 +404,24 @@
                 "%product%": 1,
                 "would": 1,
                 "like": 1,
-                "from": 1,
-                "%vendor%": 1
+                "pleas": 1,
+                "give": 1,
+                "me": 1,
+                "can": 1,
+                "you": 1,
+                "get": 1,
+                "need": 1
               },
               "end_conversation": {
                 "thank": 1,
-                "you": 1
+                "you": 1,
+                "that": 1,
+                "is": 1,
+                "all": 1,
+                "for": 1,
+                "now": 1,
+                "bye": 1,
+                "goodby": 1
               }
             },
             "featuresToIntent": {
@@ -232,6 +432,44 @@
                 "greeting"
               ],
               "hey": [
+                "greeting"
+              ],
+              "good": [
+                "greeting"
+              ],
+              "morn": [
+                "greeting"
+              ],
+              "afternoon": [
+                "greeting"
+              ],
+              "even": [
+                "greeting"
+              ],
+              "how": [
+                "greeting",
+                "inquire_price"
+              ],
+              "are": [
+                "greeting",
+                "inquire_price"
+              ],
+              "you": [
+                "greeting",
+                "inquire_price",
+                "select_item",
+                "end_conversation"
+              ],
+              "what": [
+                "greeting",
+                "inquire_price"
+              ],
+              "is": [
+                "greeting",
+                "inquire_price",
+                "end_conversation"
+              ],
+              "up": [
                 "greeting"
               ],
               "i": [
@@ -256,16 +494,49 @@
                 "select_item"
               ],
               "can": [
-                "inquire_price"
+                "inquire_price",
+                "select_item"
               ],
               "get": [
-                "inquire_price"
+                "inquire_price",
+                "select_item"
               ],
               "someth": [
                 "inquire_price"
               ],
               "the": [
+                "inquire_price",
                 "select_item"
+              ],
+              "price": [
+                "inquire_price"
+              ],
+              "of": [
+                "inquire_price"
+              ],
+              "much": [
+                "inquire_price"
+              ],
+              "do": [
+                "inquire_price"
+              ],
+              "have": [
+                "inquire_price"
+              ],
+              "ani": [
+                "inquire_price"
+              ],
+              "in": [
+                "inquire_price"
+              ],
+              "stock": [
+                "inquire_price"
+              ],
+              "avail": [
+                "inquire_price"
+              ],
+              "product": [
+                "inquire_price"
               ],
               "would": [
                 "select_item"
@@ -273,16 +544,37 @@
               "like": [
                 "select_item"
               ],
-              "from": [
+              "pleas": [
                 "select_item"
               ],
-              "%vendor%": [
+              "give": [
+                "select_item"
+              ],
+              "me": [
+                "select_item"
+              ],
+              "need": [
                 "select_item"
               ],
               "thank": [
                 "end_conversation"
               ],
-              "you": [
+              "that": [
+                "end_conversation"
+              ],
+              "all": [
+                "end_conversation"
+              ],
+              "for": [
+                "end_conversation"
+              ],
+              "now": [
+                "end_conversation"
+              ],
+              "bye": [
+                "end_conversation"
+              ],
+              "goodby": [
                 "end_conversation"
               ]
             },
@@ -302,6 +594,16 @@
                 "hello",
                 "hi",
                 "hey",
+                "good",
+                "morn",
+                "afternoon",
+                "even",
+                "how",
+                "are",
+                "you",
+                "what",
+                "is",
+                "up",
                 "i",
                 "want",
                 "to",
@@ -312,12 +614,29 @@
                 "get",
                 "someth",
                 "the",
+                "price",
+                "of",
+                "much",
+                "do",
+                "have",
+                "ani",
+                "in",
+                "stock",
+                "avail",
+                "product",
                 "would",
                 "like",
-                "from",
-                "%vendor%",
+                "pleas",
+                "give",
+                "me",
+                "need",
                 "thank",
-                "you"
+                "that",
+                "all",
+                "for",
+                "now",
+                "bye",
+                "goodby"
               ],
               "intents": [
                 "greeting",
@@ -327,92 +646,200 @@
               ],
               "perceptrons": [
                 [
-                  8.455060958862305,
-                  8.454094886779785,
-                  8.449508666992188,
-                  -2.42511248588562,
-                  -1.374389886856079,
-                  -0.8512002825737,
-                  -0.7247073650360107,
-                  -0.7247073650360107,
-                  -1.5121958255767822,
-                  -0.47916656732559204,
-                  -0.6056596636772156,
-                  -0.6056596636772156,
-                  -0.7862517237663269,
-                  -0.5686329007148743,
-                  -0.5686329007148743,
-                  -0.27238941192626953,
-                  -5.800321102142334,
-                  -5.800712585449219,
-                  -1.6688733100891113,
-                  5.8187693753610645
+                  8.055893898010254,
+                  8.054529190063477,
+                  8.0484037399292,
+                  6.052908897399902,
+                  2.0187184810638428,
+                  2.0177195072174072,
+                  2.0164363384246826,
+                  4.259706497192383,
+                  3.1595242023468018,
+                  0.6469357013702393,
+                  1.829351544380188,
+                  0.9269176125526428,
+                  5.312474727630615,
+                  -1.740152359008789,
+                  -1.348516821861267,
+                  -1.3340084552764893,
+                  -0.7242934107780457,
+                  -0.7242934107780457,
+                  -4.273806571960449,
+                  -0.4094892144203186,
+                  -0.9837092161178589,
+                  -0.9161847829818726,
+                  -5.468649387359619,
+                  -0.6232491135597229,
+                  -0.6232491135597229,
+                  -1.6586591005325317,
+                  -0.6610538959503174,
+                  -0.6610538959503174,
+                  -0.6610538959503174,
+                  -0.6610538959503174,
+                  -0.6610538959503174,
+                  -2.975694417953491,
+                  -2.758840560913086,
+                  0,
+                  0,
+                  -0.022498726844787598,
+                  -0.022498726844787598,
+                  -0.0847807452082634,
+                  0,
+                  -6.857827663421631,
+                  -1.7857564687728882,
+                  -1.7857564687728882,
+                  -1.7857564687728882,
+                  -1.7857564687728882,
+                  -6.189295768737793,
+                  -6.18196439743042,
+                  6.212475446695606
                 ],
                 [
-                  -0.4167495667934418,
-                  -0.4165477454662323,
-                  -0.4163200259208679,
-                  2.591273546218872,
-                  -0.13587963581085205,
-                  3.800537109375,
-                  3.6513772010803223,
-                  3.6513772010803223,
-                  0.3151520788669586,
-                  3.656080722808838,
-                  3.805299997329712,
-                  3.805299997329712,
-                  -3.331773519515991,
-                  -0.7827686071395874,
-                  -0.7827686071395874,
-                  -1.493067741394043,
-                  -1.5758317708969116,
-                  -0.4253639876842499,
-                  -0.16764630377292633,
-                  0.41711894779859726
+                  -0.36254534125328064,
+                  -0.3511030972003937,
+                  -0.3400002121925354,
+                  -0.5148137211799622,
+                  -0.16026510298252106,
+                  -0.15868833661079407,
+                  -0.14111551642417908,
+                  2.319274425506592,
+                  1.203641653060913,
+                  -3.788820743560791,
+                  1.1710536479949951,
+                  4.438092231750488,
+                  -5.814681053161621,
+                  -0.17548444867134094,
+                  -2.569666862487793,
+                  5.554120063781738,
+                  4.757177352905273,
+                  4.757177352905273,
+                  1.8230043649673462,
+                  2.8282277584075928,
+                  3.6243550777435303,
+                  7.5776543617248535,
+                  0.44927653670310974,
+                  3.082040786743164,
+                  3.082040786743164,
+                  5.020506858825684,
+                  3.202394962310791,
+                  3.202394962310791,
+                  3.202394962310791,
+                  3.202394962310791,
+                  3.202394962310791,
+                  7.321563720703125,
+                  3.904874086380005,
+                  -1.9034688472747803,
+                  -1.9034688472747803,
+                  -1.0506271123886108,
+                  -1.0506271123886108,
+                  -5.142491817474365,
+                  -2.3145883083343506,
+                  -0.6365779638290405,
+                  -1.1978569030761719,
+                  -1.1978569030761719,
+                  -1.1978569030761719,
+                  -1.1978569030761719,
+                  -0.38679221272468567,
+                  -0.3746257424354553,
+                  0.23150827979209795
                 ],
                 [
-                  -2.274768590927124,
-                  -2.2704412937164307,
-                  -2.2659363746643066,
-                  0.6939024329185486,
-                  1.1583157777786255,
-                  -3.109708070755005,
-                  -2.7429821491241455,
-                  -2.7429821491241455,
-                  3.61560320854187,
-                  -1.1328552961349487,
-                  -1.492595911026001,
-                  -1.492595911026001,
-                  6.3589768409729,
-                  0.6723802089691162,
-                  0.6723802089691162,
-                  -1.3834587335586548,
-                  11.657768249511719,
-                  -2.284350872039795,
-                  -0.622841477394104,
-                  2.3217462414144867
+                  -0.20118218660354614,
+                  -0.19320741295814514,
+                  -0.18554797768592834,
+                  -0.43481728434562683,
+                  -0.12215998768806458,
+                  -0.11006121337413788,
+                  -0.09749943763017654,
+                  -1.8209701776504517,
+                  -0.5044164061546326,
+                  1.3924553394317627,
+                  -1.8271756172180176,
+                  -5.466124057769775,
+                  -0.051031216979026794,
+                  4.453194618225098,
+                  3.550180196762085,
+                  -4.990305423736572,
+                  -5.198062896728516,
+                  -5.198062896728516,
+                  6.044435977935791,
+                  0.36827898025512695,
+                  0.5802337527275085,
+                  -3.2032508850097656,
+                  1.2480050325393677,
+                  -1.2406938076019287,
+                  -1.2406938076019287,
+                  -1.6032781600952148,
+                  -1.4098435640335083,
+                  -1.4098435640335083,
+                  -1.4098435640335083,
+                  -1.4098435640335083,
+                  -1.4098435640335083,
+                  -2.3951210975646973,
+                  -0.2895548939704895,
+                  1.455352783203125,
+                  1.455352783203125,
+                  1.209559440612793,
+                  1.209559440612793,
+                  4.996338367462158,
+                  2.8643600940704346,
+                  -0.9956485629081726,
+                  -0.08461810648441315,
+                  -0.08461810648441315,
+                  -0.08461810648441315,
+                  -0.08461810648441315,
+                  -0.2183530032634735,
+                  -0.20969125628471375,
+                  -0.35125291764355776
                 ],
                 [
-                  -1.8641786575317383,
-                  -1.8619740009307861,
-                  -1.859647274017334,
-                  -0.8954291343688965,
-                  -0.547812283039093,
-                  -0.307197630405426,
-                  -0.27795225381851196,
-                  -0.27795225381851196,
-                  -0.5637027025222778,
-                  -0.1475699543952942,
-                  -0.17701347172260284,
-                  -0.17701347172260284,
-                  -0.26472023129463196,
-                  -0.16516533493995667,
-                  -0.16516533493995667,
-                  -0.11644865572452545,
-                  -1.85747230052948,
-                  11.98719596862793,
-                  0.6915591359138489,
-                  1.890790342507772
+                  -4.335256576538086,
+                  -4.330109596252441,
+                  -4.324543476104736,
+                  -3.266558885574341,
+                  -1.097806692123413,
+                  -1.0846130847930908,
+                  -1.0830445289611816,
+                  -2.6188840866088867,
+                  -2.3758609294891357,
+                  0.18203429877758026,
+                  -2.210064172744751,
+                  -0.3157266080379486,
+                  -1.8247870206832886,
+                  -1.0914759635925293,
+                  -0.8901523351669312,
+                  -0.8656114339828491,
+                  -0.35638856887817383,
+                  -0.35638856887817383,
+                  -2.3689024448394775,
+                  -0.37846484780311584,
+                  -0.8437507152557373,
+                  -0.6608336567878723,
+                  -1.4292175769805908,
+                  -0.2500482499599457,
+                  -0.2500482499599457,
+                  -0.23950640857219696,
+                  -0.5603893399238586,
+                  -0.5603893399238586,
+                  -0.5603893399238586,
+                  -0.5603893399238586,
+                  -0.5603893399238586,
+                  -0.4731793701648712,
+                  -0.04624950513243675,
+                  0,
+                  0,
+                  -0.12347972393035889,
+                  -0.12347972393035889,
+                  -0.3063967525959015,
+                  0,
+                  9.82542610168457,
+                  2.562126398086548,
+                  2.562126398086548,
+                  2.562126398086548,
+                  2.562126398086548,
+                  9.91147518157959,
+                  9.90321159362793,
+                  4.3553962262788755
                 ]
               ]
             }
@@ -436,6 +863,26 @@
       ],
       [
         "en",
+        "good morning"
+      ],
+      [
+        "en",
+        "good afternoon"
+      ],
+      [
+        "en",
+        "good evening"
+      ],
+      [
+        "en",
+        "how are you"
+      ],
+      [
+        "en",
+        "what's up"
+      ],
+      [
+        "en",
         "I want to buy a %product%"
       ],
       [
@@ -448,6 +895,26 @@
       ],
       [
         "en",
+        "What's the price of %product%"
+      ],
+      [
+        "en",
+        "How much is the %product%"
+      ],
+      [
+        "en",
+        "Do you have any %product% in stock?"
+      ],
+      [
+        "en",
+        "Is the %product% available?"
+      ],
+      [
+        "en",
+        "What are the available products?"
+      ],
+      [
+        "en",
         "I want the %product%"
       ],
       [
@@ -456,11 +923,19 @@
       ],
       [
         "en",
-        "I want from %vendor%"
+        "Please give me the %product%"
       ],
       [
         "en",
-        "%vendor%"
+        "Can you get me the %product%"
+      ],
+      [
+        "en",
+        "I need the %product%"
+      ],
+      [
+        "en",
+        "I want %product%"
       ],
       [
         "en",
@@ -469,6 +944,18 @@
       [
         "en",
         "Thanks"
+      ],
+      [
+        "en",
+        "That's all for now"
+      ],
+      [
+        "en",
+        "Bye"
+      ],
+      [
+        "en",
+        "Goodbye"
       ]
     ]
   },
@@ -485,33 +972,15 @@
           "type": "enum",
           "rules": [
             {
-              "option": "Wall clock",
+              "option": "Bag ruby",
               "texts": [
-                "Wall clock"
+                "Bag ruby"
               ]
             },
             {
-              "option": "Socks",
+              "option": "Shoe",
               "texts": [
-                "Socks"
-              ]
-            }
-          ]
-        },
-        "user": {
-          "name": "user",
-          "type": "enum",
-          "rules": [
-            {
-              "option": "JAmaze Technologies",
-              "texts": [
-                "JAmaze Technologies"
-              ]
-            },
-            {
-              "option": "Peggi Computers",
-              "texts": [
-                "Peggi Computers"
+                "Shoe"
               ]
             }
           ]
@@ -528,21 +997,69 @@
         "greeting": [
           {
             "answer": "Hi, how can I help?"
+          },
+          {
+            "answer": "Hello! How may I assist you today?"
+          },
+          {
+            "answer": "Hey there! How can I help you today?"
+          },
+          {
+            "answer": "Good to see you! What do you need assistance with?"
+          },
+          {
+            "answer": "Hi! What can I do for you today?"
           }
         ],
         "inquire_price": [
           {
             "answer": "Sure! Let me find what we have for "
+          },
+          {
+            "answer": "Let me check the price for "
+          },
+          {
+            "answer": "I'll show you the prices for "
+          },
+          {
+            "answer": "We have several options for "
+          },
+          {
+            "answer": "I'm checking the availability of "
           }
         ],
         "select_item": [
           {
             "answer": "Great choice! Let me show you the vendors for "
+          },
+          {
+            "answer": "You've picked a great item! I'll show you where to buy "
+          },
+          {
+            "answer": "Perfect! Here are the sellers for "
+          },
+          {
+            "answer": "That's a good selection! I'll display the available options for "
+          },
+          {
+            "answer": "Let me find the vendors for your choice of "
           }
         ],
         "end_conversation": [
           {
             "answer": "You're welcome!"
+          },
+          {
+            "answer": "Glad to help!"
+          },
+          {
+            "answer": "Have a great day!"
+          },
+          {
+            "answer": "Take care!"
+          },
+          {
+            "answer": "Goodbye!"
           }
         ]
       }
@@ -567,12 +1084,6 @@
       "product": {
         "intent": "select_item",
         "entity": "product",
-        "mandatory": false,
-        "locales": {}
-      },
-      "vendor": {
-        "intent": "select_item",
-        "entity": "vendor",
         "mandatory": false,
         "locales": {}
       }
