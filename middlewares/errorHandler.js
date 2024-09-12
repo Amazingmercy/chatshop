@@ -10,7 +10,7 @@ const errorHandler = (err, req, res, next) => {
         res.clearCookie('token');
         return res.status(401).send(`
             <h2>${customError.message}</h2><br>
-            <a href="${productionUrl}/login">Login Again</a>
+            <a href="${productionUrl}/">Login Again</a>
         `);
     } else {
         // Handle other errors

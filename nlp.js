@@ -1,5 +1,6 @@
 const { NlpManager } = require('node-nlp');
 const Products = require('./models/productModel');
+const User = require('./models/userModel')
 
 const setupNlp = async () => {
   const manager = new NlpManager({ languages: ['en'], forceNER: true });
@@ -10,6 +11,11 @@ const setupNlp = async () => {
     manager.addNamedEntityText('product', product.name, ['en'], [product.name]);
   });
 
+  const vendors = await User.find();
+  vendors.forEach(vendor => {
+    manager.addNamedEntityText('user', vendor.businessName, ['en'], [vendor.businessName]);
+  });
+
   // Greeting Intents
   manager.addDocument('en', 'hello', 'greeting');
   manager.addDocument('en', 'hi', 'greeting');
@@ -18,10 +24,13 @@ const setupNlp = async () => {
   // Product Inquiry Intents
   manager.addDocument('en', 'I want to buy a %product%', 'inquire_price');
   manager.addDocument('en', 'can I buy a %product%', 'inquire_price');
+  manager.addDocument('en', 'I want to get something', 'inquire_price');
 
   // Product Selection Intents
   manager.addDocument('en', 'I want the %product%', 'select_item');
   manager.addDocument('en', 'I would like the %product%', 'select_item');
+  manager.addDocument('en', 'I want from %vendor%', 'select_item');
+  manager.addDocument('en', '%vendor%', 'select_item');
 
   // End Conversation Intents
   manager.addDocument('en', 'Thank you', 'end_conversation');
@@ -31,10 +40,10 @@ const setupNlp = async () => {
   manager.addAnswer('en', 'greeting', 'Hi, how can I help?');
 
   // Product Inquiry Responses
-  manager.addAnswer('en', 'inquire_price', 'Sure! Let me find what we have for %product%.');
+  manager.addAnswer('en', 'inquire_price', 'Sure! Let me find what we have for ');
 
   // Product Selection Responses
-  manager.addAnswer('en', 'select_item', 'Great choice! Let me show you the vendors for %product%.');
+  manager.addAnswer('en', 'select_item', 'Great choice! Let me show you the vendors for ');
 
   // End Conversation Responses
   manager.addAnswer('en', 'end_conversation', 'You\'re welcome!');
