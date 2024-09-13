@@ -54,6 +54,7 @@ const handleProductInquiry = async (res, recipient, response) => {
   } else {
     let responseMessage = 'We do not have that right now, Here\'s what we have';
     await sendTextMessage(res, recipient, responseMessage);
+
     const allProducts = await Product.distinct('name');
     for (const productName of allProducts) {
       // Find each product
@@ -161,13 +162,13 @@ const sendImageMessage = async (res, recipient, imageUrl) => {
 
 const handleIncomingMessage = async (req, res) => {
   try {
-    const incomingMessage = req.body.entry[0].changes[0].value.messages[0].text.body;
-    const from = req.body.entry[0].changes[0].value.messages[0].from;
+    const incomingMessage = req.body.entry[0].changes[0].value.messages.text.body;
+    const from = req.body.entry[0].changes[0].value.messages.from;
 
+    
     const manager = await setupNlp();
     const response = await manager.process('en', incomingMessage);
-    console.log(response.answer)
-
+    
     switch (response.intent) {
       case 'greeting':
         await handleGreeting(res, from, response);

@@ -30,6 +30,9 @@ const setupNlp = async () => {
   manager.addDocument('en', 'Do you have any %product% in stock?', 'inquire_price');  // New inquiry
   manager.addDocument('en', 'Is the %product% available?', 'inquire_price');  // New inquiry
   manager.addDocument('en', 'What are the available products?', 'inquire_price');  // New inquiry
+  manager.addDocument('en', 'What else do you have?', 'inquire_price');  // New inquiry
+  manager.addDocument('en', 'Give me another product', 'inquire_price');  // New inquiry
+  manager.addDocument('en', 'I want another %product%', 'inquire_price');  // New inquiry
 
   // Product Selection Intents
   manager.addDocument('en', 'I want the %product%', 'select_item');
