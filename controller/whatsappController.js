@@ -168,26 +168,24 @@ const handleIncomingMessage = async (req, res) => {
     
     const manager = await setupNlp();
     const response = await manager.process('en', incomingMessage);
-
-    sendTextMessage(res, from, 'Hiiiiii Raph')
     
-    // switch (response.intent) {
-    //   case 'greeting':
-    //     await handleGreeting(res, from, response);
-    //     break;
-    //   case 'inquire_price':
-    //     await handleProductInquiry(res, from, response);
-    //     break;
-    //   case 'select_item':
-    //     await handleProductSelection(res, from, response);
-    //     break;
-    //   case 'end_conversation':
-    //     await handleEndConversation(res, from, response);
-    //     break;
-    //   default:
-    //     await sendMessage(res, from, "Sorry, I didn't understand that. Can you please rephrase?");
-    //     break;
-    // }
+    switch (response.intent) {
+      case 'greeting':
+        await handleGreeting(res, from, response);
+        break;
+      case 'inquire_price':
+        await handleProductInquiry(res, from, response);
+        break;
+      case 'select_item':
+        await handleProductSelection(res, from, response);
+        break;
+      case 'end_conversation':
+        await handleEndConversation(res, from, response);
+        break;
+      default:
+        await sendMessage(res, from, "Sorry, I didn't understand that. Can you please rephrase?");
+        break;
+    }
     res.status(200).json({ message: 'Request handled successfully' });
   } catch (error) {
     console.log('Error handling incoming message:', error);
