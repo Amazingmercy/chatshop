@@ -29,6 +29,10 @@ const userSchema = new Schema({
     maxlength: 255,
     trim: true,
   },
+  paymentThreshold: {
+    type: Number,
+    default: 0,
+  },
   joinDate: {
     type: Date,
     default: Date.now,
